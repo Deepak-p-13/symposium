@@ -1,0 +1,29 @@
+#countdown {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#countdown div {
+    font-size: 1.2rem; /* Reduced size */
+    color: #fff;
+    padding: 10px;
+}
+
+#countdown span {
+    font-size: 2rem; /* Reduced size for time numbers */
+    color: white;  
+    display: block;
+    margin-bottom: 5px;
+}
+
+h1.text-white {
+    white-space: nowrap; /* Prevent text wrapping */
+    color: white;
+    font-size: 24px; /* Adjust as needed */
+  }
+
+p.text-secondary {
+    white-space: nowrap;
+
+}
