@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration Form</title>
+</head>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<style>
+    body{
+        background-color:rgb(120, 140, 147);
+    }
+    h1{
+        text-align:center;
+    }
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+    form {
+      border: 1px solid black;
+      background-color: rgba(240, 238, 235, 0.785);
+      padding-top: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+      padding-left: 80px;
+    }
+    </style>
+<body>
+    <h1>EVENT REGISTRATION FORM</h1>
+    <form action="insert.php" method="POST"  enctype="multipart/form-data">
+        <b><label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+            <BR>
+        <label for="name">Name (To be written in Certificate):</label>
+        <input type="text" name="name" required><br>
+            <BR>
+             
+        <label for="gender">Gender:</label>
+        <select name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+        </select><br>
+        <BR>
+           
+        <label for="college">Name of the College/ University:</label>
+        <input type="text" name="college" required><br>
+            <BR>
+               
+        <label for="department">Name of the department:</label>
+        <input type="text" name="department" required><br>
+            <BR>
+                <p>Scan the QR Code to pay</p>
+        <a href="./image/upi.png" target="_blank">
+            <img src="./image/clickme.jpg" alt=""  width="50" height="60">
+        </a>
+        <br>
+        <br>
+        <label for="payment_proof">Payment Proof (attach the screenshot):</label>
+        <input type="file" name="payment_proof" required><br>
+        <BR>
+            
+
+        <label for="payment_reference">Payment UPI reference number/ Transaction Id:</label>
+        <input type="text" name="payment_reference" required><br></b>
+        <BR>
+         
+        <fieldset>
+            <legend><b>Name of the Technical Event willing to participate:</b></legend>
+            <label for="paper_presentation">
+                <input type="checkbox" name="technical_event[]" id="paper_presentation" value="Paper Presentation"> Paper Presentation
+            </label><br>
+            <label for="quiz">
+                <input type="checkbox" name="technical_event[]" id="quiz" value="Quiz"> Quiz
+            </label><br>
+            <label for="codeathon">
+                <input type="checkbox" name="technical_event[]" id="codeathon" value="Code-A-Thon"> Code-A-Thon
+            </label><br>
+            <label for="treasure_hunt">
+                <input type="checkbox" name="technical_event[]" id="treasure_hunt" value="Technical Treasure Hunt"> Technical Treasure Hunt
+            </label><br>
+            <label for="ideathon_idea">
+                <input type="checkbox" name="technical_event[]" id="ideathon_idea" value="Ideathon (Idea Presentation only)"> Ideathon (Idea Presentation only)
+            </label><br>
+            <label for="ideathon_prototype">
+                <input type="checkbox" name="technical_event[]" id="ideathon_prototype" value="Ideathon (Prototype Presentation)"> Ideathon (Prototype Presentation)
+            </label><br>
+        </fieldset>
+        <script>
+            // JavaScript to limit checkbox selection to two
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+                    if (checkedCheckboxes.length > 2) {
+                        checkbox.checked = false;
+                    }
+                });
+            });
+        </script>
+
+        <div id="message"></div>
+        
+        
+            <BR>
+                  
+        <label for="non_technical_event"><b>Name of the Non-Technical Event willing to participate:</b></label>
+        <input type="checkbox" name="non_technical_event[]" value="Best Manager">Best Manager
+        <input type="checkbox" name="non_technical_event[]" value="Gaming">Gaming
+        <input type="checkbox" name="non_technical_event[]" value="Meme Time">Meme Time
+        <input type="checkbox" name="non_technical_event[]" value="Shortography">Shortography
+        <br>
+        <BR>
+          
+
+        <b><label for="phone">Phone Number:</label>
+        <input type="text" name="phone" required><br>
+        <BR>
+           
+        <label for="accommodation">Do you want accommodation?</label>
+        <input type="radio" name="accommodation" value="Yes" required>Yes
+        <input type="radio" name="accommodation" value="No" required>No
+        <br>
+        <BR>
+        
+        <label for="accommodation_date">If you want accommodation, kindly mention the date of accommodation:</label>
+        <input type="date" name="accommodation_date"><br>
+        <BR>
+         
+        <label for="college_bus">Need College Bus?</label>
+        <input type="radio" name="college_bus" value="Yes" required>Yes
+        <input type="radio" name="college_bus" value="No" required>No
+        <br>
+        <BR>
+        
+        <label for="boarding_point">If Yes, Specify Boarding Point:</label>
+        <input type="text" name="boarding_point"><br></b>
+            <BR>
+             
+        <input class="glow-on-hover" type="submit" value="Submit" >
+
+    </form>
+</body>
+</html>
