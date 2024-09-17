@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Contest Registration Form</title>
+</head>
+<body>
+    <div class="container">
+        <header>Registration</header>
+        <form action="#">
+            <!-- First Page: Personal Details & Event Selection -->
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="name">Name (To be written in Certificate)</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="gender">Gender</label>
+                            <select name="gender" required style="width: 50%;">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label for="college">College/University</label>
+                            <input type="text" id="college" placeholder="Enter your college/university" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="department">Department</label>
+                            <input type="text" id="department" placeholder="Enter your department" required>
+                        </div>
+                    </div>
+                    <span class="title">Event Selection</span>
+                    <div class="fields event-selection">
+                        <fieldset>
+                            <legend>Technical Events willing to participate:</legend>
+                            <label for="paper_presentation">
+                                <input type="checkbox" name="technical_event[]" id="paper_presentation" value="Paper Presentation"> Paper Presentation
+                            </label>
+                            <label for="quiz">
+                                <input type="checkbox" name="technical_event[]" id="quiz" value="Quiz"> Quiz
+                            </label>
+                            <label for="codeathon">
+                                <input type="checkbox" name="technical_event[]" id="codeathon" value="Code-A-Thon"> Code-A-Thon
+                            </label>
+                            <label for="treasure_hunt">
+                                <input type="checkbox" name="technical_event[]" id="treasure_hunt" value="Technical Treasure Hunt"> Technical Treasure Hunt
+                            </label>
+                
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>Non-Technical Events willing to participate:</legend>
+                            <label for="best_manager">
+                                <input type="checkbox" name="non_technical_event[]" id="best_manager" value="Best Manager"> Best Manager
+                            </label>
+                            <label for="gaming">
+                                <input type="checkbox" name="non_technical_event[]" id="gaming" value="Gaming"> Gaming
+                            </label>
+                            <label for="meme_time">
+                                <input type="checkbox" name="non_technical_event[]" id="meme_time" value="Meme Time"> Meme Time
+                            </label>
+                            <label for="shortography">
+                                <input type="checkbox" name="non_technical_event[]" id="shortography" value="Shortography"> Shortography
+                            </label>
+                        </fieldset>
+                    </div>
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Second Page: Accommodation & Payment -->
+            <div class="form second" style="display:none;">
+                <div class="details payment">
+                    <span class="title">Payment & Accommodation</span>
+                    <div class="fields">
+                        <p class="text-instructions">Pay through UPI</p>
+                        <div class="qr-code">
+                            <a href="#" target="_blank">
+                                <img src="qr-code.jpg" alt="QR Code for UPI Payment" class="qr-img">
+                            </a>
+                        </div>
+                        <div class="input-field">
+                            <label for="payment_proof">Payment Proof</label>
+                            <input type="file" id="payment_proof" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="payment_reference">UPI Reference Number/Transaction ID</label>
+                            <input type="text" id="payment_reference" placeholder="Enter transaction ID" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="accommodation">Do you need accommodation?</label>
+                            <div class="radio-group">
+                                <label >
+                                    <input type="radio" name="accommodation" value="Yes" required> Yes
+                                    <span></span>
+                                </label>
+                                <label >
+                                    <input type="radio" name="accommodation" value="No" required> No
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label for="accommodation_date">Accommodation Date</label>
+                            <input type="date" id="accommodation_date">
+                        </div>
+                        <div class="input-field">
+                            <label for="college_bus">Need College Bus?</label>
+                            <div class="radio-group">
+                                <label >
+                                    <input type="radio" name="college_bus" value="Yes" required> Yes
+                                    <span></span>
+                                </label>
+                                <label >
+                                    <input type="radio" name="college_bus" value="No" required> No
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label for="boarding_point">Specify Boarding Point</label>
+                            <input type="text" id="boarding_point" placeholder="Enter boarding point">
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Previous</span>
+                        </button>
+                        <button type="submit" class="submitBtn">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-check-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
