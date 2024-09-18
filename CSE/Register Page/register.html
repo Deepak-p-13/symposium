@@ -22,6 +22,10 @@
                             <input type="text" id="name" name="name" placeholder="Enter your name" required>
                         </div>
                         <div class="input-field">
+                            <label for="phone">Phone Number:</label>
+                            <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="input-field">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" placeholder="Enter your email" required>
                         </div>
@@ -45,37 +49,41 @@
 
                     <span class="title">Event Selection</span>
                     <div class="fields event-selection">
-                        <fieldset>
-                            <legend>Technical Events willing to participate:</legend>
-                            <label for="paper_presentation">
-                                <input type="checkbox" name="technical_event[]" id="paper_presentation" value="Paper Presentation"> Paper Presentation
-                            </label>
-                            <label for="quiz">
-                                <input type="checkbox" name="technical_event[]" id="quiz" value="Quiz"> Quiz
-                            </label>
-                            <label for="codeathon">
-                                <input type="checkbox" name="technical_event[]" id="codeathon" value="Code-A-Thon"> Code-A-Thon
-                            </label>
-                            <label for="treasure_hunt">
-                                <input type="checkbox" name="technical_event[]" id="treasure_hunt" value="Technical Treasure Hunt"> Technical Treasure Hunt
-                            </label>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>Non-Technical Events willing to participate:</legend>
-                            <label for="best_manager">
-                                <input type="checkbox" name="non_technical_event[]" id="best_manager" value="Best Manager"> Best Manager
-                            </label>
-                            <label for="gaming">
-                                <input type="checkbox" name="non_technical_event[]" id="gaming" value="Gaming"> Gaming
-                            </label>
-                            <label for="meme_time">
-                                <input type="checkbox" name="non_technical_event[]" id="meme_time" value="Meme Time"> Meme Time
-                            </label>
-                            <label for="shortography">
-                                <input type="checkbox" name="non_technical_event[]" id="shortography" value="Shortography"> Shortography
-                            </label>
-                        </fieldset>
+                        <div class="field-group">
+                            <fieldset>
+                                <legend>Technical Events willing to participate:</legend>
+                                <label for="paper_presentation">
+                                    <input type="checkbox" name="technical_event[]" id="paper_presentation" value="Paper Presentation"> Paper Presentation
+                                </label>
+                                <label for="quiz">
+                                    <input type="checkbox" name="technical_event[]" id="quiz" value="Quiz"> Quiz
+                                </label>
+                                <label for="codeathon">
+                                    <input type="checkbox" name="technical_event[]" id="codeathon" value="Code-A-Thon"> Code-A-Thon
+                                </label>
+                                <label for="treasure_hunt">
+                                    <input type="checkbox" name="technical_event[]" id="treasure_hunt" value="Technical Treasure Hunt"> Technical Treasure Hunt
+                                </label>
+                            </fieldset>
+                    
+                            <fieldset>
+                                <legend>Non-Technical Events willing to participate:</legend>
+                                <label for="best_manager">
+                                    <input type="checkbox" name="non_technical_event[]" id="best_manager" value="Best Manager"> Best Manager
+                                </label>
+                                <label for="gaming">
+                                    <input type="checkbox" name="non_technical_event[]" id="gaming" value="Gaming"> Gaming
+                                </label>
+                                <label for="meme_time">
+                                    <input type="checkbox" name="non_technical_event[]" id="meme_time" value="Meme Time"> Meme Time
+                                </label>
+                                <label for="shortography">
+                                    <input type="checkbox" name="non_technical_event[]" id="shortography" value="Shortography"> Shortography
+                                </label>
+                            </fieldset>
+                    
+                            <div class="note">**NOTE** At most only 4 events can be selected, with a maximum of 2 from each category.</div>
+                        </div>
                     </div>
 
                     <button class="nextBtn" type="button">

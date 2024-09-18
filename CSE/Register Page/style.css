@@ -44,6 +44,7 @@ body{
     margin-top: 16px; 
     min-height: 490px; 
     background-color:#fff;
+    align-items: center;
 }
 .container form .title{
     display: block;
@@ -143,13 +144,6 @@ form .buttons button{
     margin-right: 14px;
 }
 
-fieldset{
-    margin-top: 15px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
 legend{
     padding: 0 10px;
     font-size: 14px;
@@ -171,9 +165,20 @@ fieldset {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 15px 0; 
-    margin-right: 400px;
-    display: block; 
-    width: 100%; 
+    display: inline-block;
+    width: 60%; 
+    vertical-align: top; 
+}
+
+ .note {
+    display: inline-block;
+    width: 35%; 
+    padding-left: 20px;
+    font-size: 13px;
+    color: #901c1c;
+    vertical-align: top;
+    margin-right: 0;
+    box-sizing: border-box;
 }
 
 input[type="checkbox"]{
