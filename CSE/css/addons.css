@@ -1,50 +1,136 @@
 #countdown {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
 #countdown div {
-    font-size: 1.2rem;
-    color: #fff;
-    padding: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 10px;
 }
 
 #countdown span {
-    font-size: 2rem;
-    color: white;  
-    display: block;
-    margin-bottom: 5px;
+  font-size: 2rem;
+  color: white;  
+  display: block;
+  margin-bottom: 5px;
 }
 
 h1.text-white {
-    white-space: nowrap; 
-    color: white;
-    font-size: 24px; 
-  }
+  white-space: nowrap; 
+  color: white;
+  font-size: 28px; 
+}
+
+h1.text-ele {
+  white-space: nowrap; 
+  color: white;
+  font-size: 50px; 
+}
 
 p.text-secondary {
-    white-space: nowrap;
+  white-space: nowrap;
 
 }
 
 
- 
-  #about-section p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 20px;
-    text-align: justify;
+
+#about-section p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  #about-section .pl-lg-5 {
+    padding-left: 0 !important;
   }
-  
-  @media (max-width: 768px) {
-    #about-section .pl-lg-5 {
-      padding-left: 0 !important;
-    }
-  
-    #about-section {
-      padding: 30px 0;
-    }
+
+  #about-section {
+    padding: 30px 0;
   }
-  
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.btn {
+  margin: 5px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.container {
+  padding-top: 50px;
+}
+/* Floating Icons Container */
+.floating-icons {
+position: fixed;
+bottom: 20px;
+left: 20px; /* Changed from right to left */
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+/* Icon Style */
+.floating-icons .icon {
+text-decoration: none;
+background-color: #333;
+padding: 15px;
+border-radius: 50%;
+color: white;
+font-size: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: background-color 0.3s ease;
+}
+
+/* LinkedIn Color */
+.floating-icons .linkedin {
+background-color: #0077b5;
+}
+
+/* Instagram Color */
+.floating-icons .instagram {
+background-color: #e1306c;
+}
+
+/* Hover Effect */
+.floating-icons .icon:hover {
+background-color: #555;
+}
+
+/* Floating Video Container */
+.floating-video {
+position: fixed;
+right: 20px;
+bottom: 20px;
+z-index: 1000; 
+}
+
+/* Video Styling */
+.floating-video video {
+width: 300px;
+height: auto; 
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
