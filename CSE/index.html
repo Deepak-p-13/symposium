@@ -26,6 +26,8 @@
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/addons.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
 
 </head>
 
@@ -54,7 +56,7 @@
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="#home-section" class="nav-link">Home</a></li>
                 <li><a href="#about-section" class="nav-link">About</a></li>
-                <li><a href="#services-section" class="nav-link">Events</a></li>
+                <li><a href="#tech" class="nav-link">Events</a></li>
               </ul>
             </nav>
           </div>
@@ -93,10 +95,11 @@
           <div class="col-md-12 mt-lg-5 text-left align-self-center text-intro">
             <div class="row">
               <div class="col-lg-6">
-                <h1 class="text-ele">Elements-2k24</h1>
+                <!-- <h1 class="text-ele">Elements-2k24</h1>
                 <h1 class="text-white">Department of Computer Science and Engineering.</h1>
                 <p class="text-secondary">Association of Computer Engineers <span class="mx-3">|</span> Elements-2k24
-                </p>
+                </p>-->
+                <p style="padding-top: 10vh;"></p>
                 <div class="countdown-container">
                   <div id="countdown">
                     <div><span id="days"></span>Days</div>
@@ -105,7 +108,8 @@
                     <div><span id="seconds"></span>Seconds</div>
                   </div>
                 </div>
-                <p><a href="Register Page/register.html" class="btn smoothscroll btn-primary">Register Now</a></p>
+                <p><a href="Register Page/register.html" class="btn smoothscroll btn-primary" id="but">Register Now</a>
+                </p>
               </div>
             </div>
           </div>
@@ -113,13 +117,17 @@
         </div>
       </div>
 
-      <img src="images/compic.jpg" alt="Image" class="img-face">
+      <video class="video-bg" autoplay muted loop playsinline preload="auto" id="background-video">
+        <source id="video-source" src="Video/ELEMENTS final.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
 
     </div>
 
+
     <div class="site-section" id="about-section">
       <div class="container">
-        <div class="row ">
+        <div class="row " id="abouts">
           <div class="col-12 mb-4 position-relative">
             <h2 class="section-title">About</h2>
           </div>
@@ -272,7 +280,7 @@
         </div>
 
 
-        <div class="row">
+        <div class="row" id="photo">
           <div class="col-md-6 col-lg-4 item">
             <a href="images/Gallery/DSC_0077.JPG" class="item-wrap fancybox mb-4">
               <span class="icon-search2"></span>
@@ -326,44 +334,6 @@
 
     </section>
 
-    <!--
-    <section class="site-section bg-primary">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 mb-5 position-relative">
-            <h2 class="section-title text-center mb-5 text-white">What Client Are Sayings</h2>
-          </div>
-        </div>
-        <div class="owl-carousel slide-one-item">
-          <div class="slide">
-            <blockquote>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste sunt nobis modi, ducimus magnam sint?
-                Soluta delectus mollitia, incidunt reprehenderit rerum tempore optio excepturi aut, error voluptatem
-                laborum quae eum.</p>
-              <p><cite>&mdash; Graig Smith</cite></p>
-            </blockquote>
-          </div>
-          <div class="slide">
-            <blockquote>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, veniam, quos optio magnam aliquid est
-                sequi cupiditate tempore libero excepturi nam laudantium consequuntur quia iste dolor fugit quas?</p>
-              <p><cite>&mdash; Carl Spencer</cite></p>
-            </blockquote>
-          </div>
-          <div class="slide">
-            <blockquote>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum veniam officiis placeat tempore,
-                voluptates quis, odit mollitia neque, quisquam sint temporibus in ullam delectus modi repudiandae
-                expedita! Cupiditate aspernatur illum adipisci recusandae beatae ea impedit.</p>
-              <p><cite>&mdash; Ryan Peters</cite></p>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
-  -->
-
-
     <section class="site-section bg-light" id="blog-section">
       <div class="container">
         <div class="row justify-content-center">
@@ -416,7 +386,7 @@
         <i class="fab fa-linkedin-in"></i>
       </a>
       <div class="floating-video">
-        <video controls>
+        <video autoplay muted controls>
           <source src="Video/WhatsApp Video 2024-09-18 at 17.17.24.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -500,8 +470,19 @@
 
   <script src="js/main.js"></script>
   <script src="js/addons.js"></script>
+  <script>
+    window.onload = function () {
+      var video = document.getElementById("background-video");
+      var videoSource = document.getElementById("video-source");
 
-
+      if (window.innerWidth <= 768) {
+        videoSource.setAttribute("src", "Video/Mobile vid.mp4");
+        video.load();
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="js/ani.js"></script>
 </body>
 
 </html>
