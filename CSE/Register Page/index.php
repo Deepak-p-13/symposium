@@ -23,7 +23,7 @@ $callback_url = "http://localhost:8000/success.html";
 echo '<script src="https://checkout.razorpay.com/v1/checkout.js"></script>';
 
 // Create a payment button with Checkout.js
-echo '<button onclick="startPayment()">Pay with Razorpay</button>';
+
 
 // Add a script to handle the payment
 echo '<script>
@@ -39,11 +39,16 @@ echo '<script>
       theme: {
         "color": "#738276"
       },
+       handler: function (response) {
+        // Redirect to Instagram page after successful payment
+        window.location.href = "https://chat.whatsapp.com/L2n6xGgC4KO6zt8MyckBqs";
+      },
       callback_url: "' . $callback_url . '"
     };
     
     var rzp = new Razorpay(options);
     rzp.open();
   }
+    startPayment();
 </script>';
 ?>

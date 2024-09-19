@@ -1,49 +1,133 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
-use Razorpay\Api\Api;
 
-$api_key = 'rzp_live_fen6ST9vYVrnXz';
-$api_secret = 'IjdZRLNIsUxq9OmYG9ehlJtf';
+$servername = "localhost";
 
-$api = new Api($api_key, $api_secret);
+$username = "root";
 
-$order = $api->order->create([
-    'amount' => 100,
-    'currency' => 'INR',
-    'receipt' => 'order_receipt_2a2a'
-]);  // Add semicolon here
+$password = "";
 
-// Get the order ID
-$order_id = $order->id;
+$dbname = "eventregistration";
 
-// Set your callback URL
-$callback_url = "http://localhost:8000/success.html";
 
-// Include Razorpay Checkout.js library
-echo '<script src="https://checkout.razorpay.com/v1/checkout.js"></script>';
 
-// Create a payment button with Checkout.js
-echo '<button onclick="startPayment()">Pay with Razorpay</button>';
+// Create a database connection
 
-// Add a script to handle the payment
-echo '<script>
-  function startPayment() {
-    var options = {
-      key: "' . $api_key . '",
-      amount: "' . $order->amount . '",
-      currency: "' . $order->currency . '",
-      name: "Your Company Name",
-      description: "Payment for your order",
-      image: "https://cdn.razorpay.com/logos/GhRQcycean79PqE_medium.png",
-      order_id: "' . $order_id . '",
-      theme: {
-        "color": "#738276"
-      },
-      callback_url: "' . $callback_url . '"
-    };
-    
-    var rzp = new Razorpay(options);
-    rzp.open();
-  }
-</script>';
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+
+
+// Check the connection
+
+if (!$conn) {
+
+    die("Connection failed: " . mysqli_connect_error());
+
+}
+
+
+
+// Retrieve data from the form
+
+$email = mysqli_real_escape_string($conn, $_POST['email']); // Prevent SQL injection
+
+
+
+// Check if the email already exists in the database
+
+$check_sql = "SELECT COUNT(*) FROM eventregistration WHERE Email = '$email'";
+
+$check_result = mysqli_query($conn, $check_sql);
+
+
+
+if ($check_result) {
+
+    $row = mysqli_fetch_row($check_result);
+
+    $email_count = $row[0];
+
+    mysqli_free_result($check_result);
+
+
+
+    if ($email_count > 0) {
+
+        echo "Error: Email address already exists in the database.";
+
+    } else {
+
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
+
+        $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+
+        $college = mysqli_real_escape_string($conn, $_POST['college']);
+
+        $department = mysqli_real_escape_string($conn, $_POST['department']);
+
+        $payment_reference = mysqli_real_escape_string($conn, $_POST['payment_reference']);
+
+        $technical_event = implode(', ', array_map('mysqli_real_escape_string', array_fill(0, count($_POST['technical_event']), $conn), $_POST['technical_event']));
+
+        $non_technical_event = implode(', ', array_map('mysqli_real_escape_string', array_fill(0, count($_POST['non_technical_event']), $conn), $_POST['non_technical_event']));
+
+        $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+
+        $accommodation = mysqli_real_escape_string($conn, $_POST['accommodation']);
+
+        $accommodation_date = mysqli_real_escape_string($conn, $_POST['accommodation_date']);
+
+        $college_bus = mysqli_real_escape_string($conn, $_POST['college_bus']);
+
+        $boarding_point = mysqli_real_escape_string($conn, $_POST['boarding_point']);
+
+
+
+        // Handle payment proof upload
+
+        $payment_proof = null;
+
+
+
+        // Insert the data into the database using prepared statements
+
+        $stmt = mysqli_prepare($conn, "INSERT INTO eventregistration (ID, Email, Name, Gender, CollegeOrUniversityName, DepartmentName, PaymentProof, PaymentReference, TechnicalEvent, NonTechnicalEvent, PhoneNumber, Accommodation, AccommodationDate, CollegeBus, BoardingPoint) VALUES (null,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        
+
+        mysqli_stmt_bind_param($stmt, "ssssssssssssss", $email, $name, $gender, $college, $department, $payment_proof, $payment_reference, $technical_event, $non_technical_event, $phone, $accommodation, $accommodation_date, $college_bus, $boarding_point);
+
+
+
+        if (mysqli_stmt_execute($stmt)) {
+
+            // Registration successful, redirect to the WhatsApp link
+
+            header("Location: index.php");
+
+            mysqli_stmt_close($stmt);
+
+            mysqli_close($conn);
+
+            exit(); // Make sure to exit to prevent further script execution
+
+        } else {
+
+            echo "Error: " . mysqli_error($conn);
+
+        }
+
+
+
+        mysqli_stmt_close($stmt);
+
+    }
+
+}
+
+
+
+// Close the database connection
+
+mysqli_close($conn);
+
 ?>

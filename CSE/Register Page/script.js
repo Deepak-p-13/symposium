@@ -87,4 +87,5 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please select atleast 1 event and ensure no more than 2 are selected from each category.');
         }
     });
+   
 });

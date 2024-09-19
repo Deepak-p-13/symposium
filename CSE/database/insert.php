@@ -84,7 +84,7 @@ if ($check_result) {
 
         // Handle payment proof upload
 
-        $payment_proof = mysqli_real_escape_string($conn, file_get_contents($_FILES['payment_proof']['tmp_name']));
+        $payment_proof = null;
 
 
 

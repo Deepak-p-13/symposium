@@ -1,0 +1,8 @@
+[22-Sep-2023 07:09:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on bool in /home/customer/www/uat.srec.ac.in/public_html/elementscse/admin/index.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/uat.srec.ac.in/public_html/elementscse/admin/index.php on line 65
+[22-Sep-2023 07:16:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on bool in /home/customer/www/uat.srec.ac.in/public_html/elementscse/admin/index.php:65
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/uat.srec.ac.in/public_html/elementscse/admin/index.php on line 65
