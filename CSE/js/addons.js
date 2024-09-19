@@ -116,3 +116,8 @@ window.addEventListener('click', function(event) {
     popup.style.display = 'none';
   }
 });
+document.getElementById('scrollUpBtn').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  
+  
