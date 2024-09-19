@@ -20,7 +20,16 @@
 h1.text-white {
   white-space: nowrap; 
   color: white;
-  font-size: 28px; 
+  font-size: 24px; 
+}
+/* Mobile view adjustments */
+@media (max-width: 600px) {
+  h1.text-white {
+      font-size: 10px; 
+      overflow: hidden; 
+      text-overflow: ellipsis; 
+      display: block; 
+  }
 }
 
 h1.text-ele {
