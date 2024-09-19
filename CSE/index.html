@@ -159,8 +159,8 @@
             <img src="images/Leviathon(Paper Presentation).PNG" class="card-img-top" alt="Presentation Image">
             <div class="card-body">
               <h5 class="card-title"><strong>Presentation</strong></h5>
-              <a href="#" class="btn btn-primary">Register</a>
-              <a href="#" class="btn btn-danger">Description</a>
+              <button class="btn btn-danger description-btn" data-event="Presentation">Description</button>
+              <button class="btn btn-warning rules-btn" data-event="Presentation">Rules</button>
             </div>
           </div>
         </div>
@@ -170,8 +170,8 @@
             <img src="images/codethon.png" class="card-img-top" alt="Code-A-Thon Image">
             <div class="card-body">
               <h5 class="card-title"><strong>Code-A-Thon</strong></h5>
-              <a href="#" class="btn btn-primary">Register</a>
-              <a href="#" class="btn btn-danger">Description</a>
+              <button class="btn btn-danger description-btn" data-event="Code-A-Thon">Description</button>
+              <button class="btn btn-warning rules-btn" data-event="Code-A-Thon">Rules</button>
             </div>
           </div>
         </div>
@@ -181,30 +181,8 @@
             <img src="images/QUIZ FINAL LOGO.png" class="card-img-top" alt="Quiz Image">
             <div class="card-body">
               <h5 class="card-title"><strong>Quiz</strong></h5>
-              <a href="#" class="btn btn-primary">Register</a>
-              <a href="#" class="btn btn-danger">Description</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="images/ideathon.jpg" class="card-img-top" alt="Ideathon Idea Image">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Ideathon-Idea</strong></h5>
-              <a href="#" class="btn btn-primary">Register</a>
-              <a href="#" class="btn btn-danger">Description</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="images/ideathon.jpg" class="card-img-top" alt="Ideathon Prototype Image">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Ideathon-Prototype</strong></h5>
-              <a href="#" class="btn btn-primary">Register</a>
-              <a href="#" class="btn btn-danger">Description</a>
+              <button class="btn btn-danger description-btn" data-event="Quiz">Description</button>
+              <button class="btn btn-warning rules-btn" data-event="Quiz">Rules</button>
             </div>
           </div>
         </div>
@@ -214,8 +192,8 @@
             <img src="images/Technical Treasure Hunt Logo.png" class="card-img-top" alt="Treasure Hunt Image">
             <div class="card-body">
               <h5 class="card-title"><strong>Technical Treasure Hunt</strong></h5>
-              <a href="#" class="btn btn-primary">Register</a>
-              <a href="#" class="btn btn-danger">Description</a>
+              <button class="btn btn-danger description-btn" data-event="TreasureHunt">Description</button>
+              <button class="btn btn-warning rules-btn" data-event="TreasureHunt">Rules</button>
             </div>
           </div>
         </div>
@@ -235,8 +213,8 @@
             <img src="images/meme.jpg" class="card-img-top" alt="Presentation Image">
             <div class="card-body">
               <h5 class="card-title"><strong>Meme Time</strong></h5>
-              <a href="#" class="btn btn-primary">Register</a>
-              <a href="#" class="btn btn-danger">Description</a>
+              <button class="btn btn-danger description-btn" data-event="MemeTime">Description</button>
+              <button class="btn btn-warning rules-btn" data-event="MemeTime">Rules</button>
             </div>
           </div>
         </div>
@@ -246,19 +224,28 @@
             <img src="images/Gaming logo.jpeg" class="card-img-top" alt="Code-A-Thon Image">
             <div class="card-body">
               <h5 class="card-title"><strong>Gaming</strong></h5>
-              <a href="#" class="btn btn-primary">Register</a>
-              <a href="#" class="btn btn-danger">Description</a>
+              <button class="btn btn-danger description-btn" data-event="Gaming">Description</button>
+              <button class="btn btn-warning rules-btn" data-event="Gaming">Rules</button>
             </div>
           </div>
         </div>
-
         <div class="col-md-4 mb-4">
           <div class="card">
             <img src="images/shotography.jpg" class="card-img-top" alt="Quiz Image">
             <div class="card-body">
               <h5 class="card-title"><strong>Shortography</strong></h5>
-              <a href="#" class="btn btn-primary">Register</a>
-              <a href="#" class="btn btn-danger">Description</a>
+              <button class="btn btn-danger description-btn" data-event="Shortography">Description</button>
+              <button class="btn btn-warning rules-btn" data-event="Shortography">Rules</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="images/BestamangerLogo.png" class="card-img-top" alt="Quiz Image">
+            <div class="card-body">
+              <h5 class="card-title"><strong>BestManager</strong></h5>
+              <button class="btn btn-danger description-btn" data-event="BestManager">Description</button>
+              <button class="btn btn-warning rules-btn" data-event="BestManager">Rules</button>
             </div>
           </div>
         </div>
@@ -268,7 +255,16 @@
       </div>
     </div>
 
-
+    <!-- Popup window -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span id="closePopupBtn" class="close">&times;</span>
+        <h2 id="popupTitle">Event Info</h2>
+        <div id="popupContent">
+          <p>This is a more visually appealing popup window!</p>
+        </div>
+      </div>
+    </div>
     <section class="site-section block__62272" id="portfolio-section">
 
 
