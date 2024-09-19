@@ -66,9 +66,14 @@ p.text-secondary {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 350px;
+  height: 400px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  width: 80%; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:hover {
@@ -85,8 +90,10 @@ p.text-secondary {
 }
 
 .card-body {
+
   text-align: center;
-  padding: 10px;
+  padding-top: 10vh;
+  margin-top: auto; 
 }
 
 .btn {
