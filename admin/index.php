@@ -1,9 +1,11 @@
+New! Keyboard shortcuts … Drive keyboard shortcuts have been updated to give you first-letters navigation
 <?php
 // Define your username and password here
 $correctUsername = "admin";
 $correctPassword = "123";
 $enteredUsername = "";
 $enteredPassword = "";
+
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -29,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>Event Registration Data</h1>
 
     <!-- Username and Password input form -->
-    <form method="POST" paction="">
+    <form method="POST" action="">
         <label for="username">Enter Username:</label>
         <input type="text" name="username" required><br>
 
@@ -44,9 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($enteredUsername == $correctUsername && $enteredPassword == $correctPassword) {
         // Create a database connection
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "eventregistration";
+$username = "root";
+$password = "";
+$dbname = "eventregistration";
+
 
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -63,36 +66,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_close($conn);
 
         // Display the table
-        if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
-            $fileName = $_FILES["image"]["name"];
-            $fileSize = $_FILES["image"]["size"];
-            $tmpName = $_FILES["image"]["tmp_name"];
-        
-            // Allowed image extensions
-            $validImageExtension = ['jpg', 'jpeg', 'png'];
-            $imageExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-        
-            // Validate file type and size
-            if (!in_array($imageExtension, $validImageExtension)) {
-                echo "<script>alert('Invalid Image Extension');</script>";
-            } elseif ($fileSize > 1000000) {
-                echo "<script>alert('Image Size Is Too Large');</script>";
-            } else {
-                // Generate a unique name for the image
-                $newImageName = uniqid() . '.' . $imageExtension;
-        
-                // Move the uploaded file
-                if (move_uploaded_file($tmpName, 'img/' . $newImageName)) {
-                    // Save the new image name in the database
-                    // Use $newImageName as the value for 'PaymentProof' in the INSERT query
-                } else {
-                    echo "Failed to move uploaded file.";
+        if ($result) {
+            if (mysqli_num_rows($result) > 0) {
+                echo "<table border='1'>";
+                echo "<tr><th>ID</th><th>Email</th><th>Name</th><th>Gender</th><th>College/University</th><th>Department</th></th><th>Technical Event</th><th>Non-Technical Event</th><th>Phone</th><th>Accommodation</th><th>Accommodation Date</th><th>College Bus</th><th>Boarding Point</th></tr>";
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row['ID'] . "</td>";
+                    echo "<td>" . $row['Email'] . "</td>";
+                    echo "<td>" . $row['Name'] . "</td>";
+                    echo "<td>" . $row['Gender'] . "</td>";
+                    echo "<td>" . $row['CollegeOrUniversityName'] . "</td>";
+                    echo "<td>" . $row['DepartmentName'] . "</td>";
+                    // Displaying Payment Proof as a link to view the image (assuming it's stored as BLOB)
+                   // echo "<td><a href='view_image.php?id=" . $row['ID'] . "'>View Image</a></td>";
+                   // echo "<td>" . $row['PaymentReference'] . "</td>";
+                    echo "<td>" . $row['TechnicalEvent'] . "</td>";
+                    echo "<td>" . $row['NonTechnicalEvent'] . "</td>";
+                    echo "<td>" . $row['PhoneNumber'] . "</td>";
+                    echo "<td>" . $row['Accommodation'] . "</td>";
+                    echo "<td>" . $row['AccommodationDate'] . "</td>";
+                    echo "<td>" . $row['CollegeBus'] . "</td>";
+                    echo "<td>" . $row['BoardingPoint'] . "</td>";
+                    echo "</tr>";
                 }
+
+                echo "</table>";
+
+                // Add a link to download the data in CSV format
+                echo '<a href="download_data.php">Download CSV</a>';
+            } else {
+                echo "No records found.";
             }
+            mysqli_free_result($result);
         } else {
-            echo "No file was uploaded or there was an error.";
+            echo "Query error: " . mysqli_error($conn);
         }
-        
     }
     ?>
 </body>
