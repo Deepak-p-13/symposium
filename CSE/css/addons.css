@@ -92,7 +92,7 @@ p.text-secondary {
 .card-body {
 
   text-align: center;
-  padding-top: 10vh;
+  padding-top: 7vh;
   margin-top: auto; 
 }
 
@@ -245,7 +245,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   background-color: white;
   padding: 30px;
   border-radius: 10px;
-  width: 400px;
+  width: 600px;
   text-align: center;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -317,4 +317,61 @@ button {
 .btn-warning {
   background-color: #ffc107;
   color: white;
+}
+
+.site-section {
+  padding: 20px 0;
+}
+
+blockquote ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.arrow-bullets {
+  list-style-type: none;
+  padding-left: 20px;
+  color: white;
+}
+
+.arrow-bullets li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  color: white;
+  font-size: 18px;
+  
+}
+
+.arrow-bullets li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: white;
+  font-size: 22px;
+}
+
+.section-title {
+  margin-bottom: 10px; 
+
+  font-size: 30px;
+  color: white;
+}
+
+.arrow-list {
+  list-style-type: none;
+  padding-left: 1em;
+}
+
+.arrow-list li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.arrow-list li:before {
+  content: '\2192'; /* Unicode for right arrow */
+  position: absolute;
+  left: 0;
+  color: #ffc107; /* Customize the arrow color */
 }
