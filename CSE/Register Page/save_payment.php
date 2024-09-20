@@ -18,7 +18,7 @@ if (isset($_POST['payment_id']) && isset($_POST['order_id'])) {
     $order_id = $_POST['order_id'];
 
     // Insert the payment ID and order ID into the database
-    $sql = "INSERT INTO payments (payment_id, order_id) VALUES ('$payment_id', '$order_id')";
+    $sql = "INSERT INTO eventregistration (payment_id, order_id) VALUES ('$payment_id', '$order_id')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Payment record inserted successfully";
