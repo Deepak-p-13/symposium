@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>Contest Registration Form</title>
 </head>
+
 <body>
     <div class="container">
         <header>Registration</header>
@@ -39,11 +41,13 @@
                         </div>
                         <div class="input-field">
                             <label for="college">College/University</label>
-                            <input type="text" id="college" name="college" placeholder="Enter your college/university" required>
+                            <input type="text" id="college" name="college" placeholder="Enter your college/university"
+                                required>
                         </div>
                         <div class="input-field">
                             <label for="department">Department</label>
-                            <input type="text" id="department" name="department" placeholder="Enter your department" required>
+                            <input type="text" id="department" name="department" placeholder="Enter your department"
+                                required>
                         </div>
                     </div>
 
@@ -53,36 +57,44 @@
                             <fieldset>
                                 <legend>Technical Events willing to participate:</legend>
                                 <label for="paper_presentation">
-                                    <input type="checkbox" name="technical_event[]" id="paper_presentation" value="Paper Presentation"> Paper Presentation
+                                    <input type="checkbox" name="technical_event[]" id="paper_presentation"
+                                        value="Paper Presentation"> Paper Presentation
                                 </label>
                                 <label for="quiz">
                                     <input type="checkbox" name="technical_event[]" id="quiz" value="Quiz"> Quiz
                                 </label>
                                 <label for="codeathon">
-                                    <input type="checkbox" name="technical_event[]" id="codeathon" value="Code-A-Thon"> Code-A-Thon
+                                    <input type="checkbox" name="technical_event[]" id="codeathon" value="Code-A-Thon">
+                                    Code-A-Thon
                                 </label>
                                 <label for="treasure_hunt">
-                                    <input type="checkbox" name="technical_event[]" id="treasure_hunt" value="Technical Treasure Hunt"> Technical Treasure Hunt
+                                    <input type="checkbox" name="technical_event[]" id="treasure_hunt"
+                                        value="Technical Treasure Hunt"> Technical Treasure Hunt
                                 </label>
                             </fieldset>
-                    
+
                             <fieldset>
                                 <legend>Non-Technical Events willing to participate:</legend>
                                 <label for="best_manager">
-                                    <input type="checkbox" name="non_technical_event[]" id="best_manager" value="Best Manager"> Best Manager
+                                    <input type="checkbox" name="non_technical_event[]" id="best_manager"
+                                        value="Best Manager"> Best Manager
                                 </label>
                                 <label for="gaming">
-                                    <input type="checkbox" name="non_technical_event[]" id="gaming" value="Gaming"> Gaming
+                                    <input type="checkbox" name="non_technical_event[]" id="gaming" value="Gaming">
+                                    Gaming
                                 </label>
                                 <label for="meme_time">
-                                    <input type="checkbox" name="non_technical_event[]" id="meme_time" value="Meme Time"> Meme Time
+                                    <input type="checkbox" name="non_technical_event[]" id="meme_time"
+                                        value="Meme Time"> Meme Time
                                 </label>
                                 <label for="shortography">
-                                    <input type="checkbox" name="non_technical_event[]" id="shortography" value="Shortography"> Shortography
+                                    <input type="checkbox" name="non_technical_event[]" id="shortography"
+                                        value="Shortography"> Shortography
                                 </label>
                             </fieldset>
-                    
-                            <div class="note">**NOTE** At most only 4 events can be selected, with a maximum of 2 from each category.</div>
+
+                            <div class="note">**NOTE** At most only 4 events can be selected, with a maximum of 2 from
+                                each category.</div>
                         </div>
                     </div>
 
@@ -98,58 +110,79 @@
                 <div class="details payment">
                     <span class="title">Payment & Accommodation</span>
                     <div class="fields">
-                        
+
                         <div class="input-field">
                             <label for="accommodation">Do you need accommodation?</label>
                             <div class="radio-group">
                                 <label>
-                                    <input type="radio" name="accommodation" value="Yes" required> Yes
+                                    <input type="radio" name="accommodation" value="Yes" required
+                                        onclick="toggleAccommodationDate(true)"> Yes
                                     <span></span>
                                 </label>
                                 <label>
-                                    <input type="radio" name="accommodation" value="No" required> No
+                                    <input type="radio" name="accommodation" value="No" required
+                                        onclick="toggleAccommodationDate(false)"> No
                                     <span></span>
                                 </label>
                             </div>
                         </div>
-                        <div class="input-field">
+
+                        <!-- Accommodation Date Field -->
+                        <div class="input-field" id="accommodation_date_field" style="display: none;">
                             <label for="accommodation_date">Accommodation Date</label>
                             <input type="date" id="accommodation_date" name="accommodation_date">
                         </div>
+
                         <div class="input-field">
                             <label for="college_bus">Need College Bus?</label>
                             <div class="radio-group">
                                 <label>
-                                    <input type="radio" name="college_bus" value="Yes" required> Yes
+                                    <input type="radio" name="college_bus" value="Yes" required
+                                        onclick="toggleBoardingPoint(true)"> Yes
                                     <span></span>
                                 </label>
                                 <label>
-                                    <input type="radio" name="college_bus" value="No" required> No
+                                    <input type="radio" name="college_bus" value="No" required
+                                        onclick="toggleBoardingPoint(false)"> No
                                     <span></span>
                                 </label>
                             </div>
                         </div>
-                        <div class="input-field">
+
+                        <!-- Boarding Point Field -->
+                        <div class="input-field" id="boarding_point_field" style="display: none;">
                             <label for="boarding_point">Specify Boarding Point</label>
-                            <input type="text" id="boarding_point" name="boarding_point" placeholder="Enter boarding point">
+                            <input type="text" id="boarding_point" name="boarding_point"
+                                placeholder="Enter boarding point">
+                        </div>
+
+                        <div class="buttons">
+                            <button class="backBtn" type="button">
+                                <i class="uil uil-navigator"></i>
+                                <span class="btnText">Previous</span>
+                            </button>
+                            <button type="submit" class="submitBtn">
+                                <span class="btnText">Submit</span>
+                                <i class="uil uil-check-circle"></i>
+                            </button>
                         </div>
                     </div>
-
-                    <div class="buttons">
-                        <button class="backBtn" type="button">
-                            <i class="uil uil-navigator"></i>
-                            <span class="btnText">Previous</span>
-                        </button>
-                        <button type="submit" class="submitBtn">
-                            <span class="btnText">Submit</span>
-                            <i class="uil uil-check-circle"></i>
-                        </button>
-                    </div>
                 </div>
-            </div>
         </form>
     </div>
 
     <script src="script.js"></script>
+    <script>
+        function toggleAccommodationDate(show) {
+            const accommodationDateField = document.getElementById('accommodation_date_field');
+            accommodationDateField.style.display = show ? 'block' : 'none';
+        }
+
+        function toggleBoardingPoint(show) {
+            const boardingPointField = document.getElementById('boarding_point_field');
+            boardingPointField.style.display = show ? 'block' : 'none';
+        }
+    </script>
 </body>
+
 </html>
