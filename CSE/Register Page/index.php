@@ -11,7 +11,7 @@ $order = $api->order->create([
     'amount' => 100,
     'currency' => 'INR',
     'receipt' => 'order_receipt_2a2a'
-]);  // Add semicolon here
+]);
 
 // Get the order ID
 $order_id = $order->id;
@@ -22,8 +22,7 @@ $callback_url = "http://localhost:8000/success.html";
 // Include Razorpay Checkout.js library
 echo '<script src="https://checkout.razorpay.com/v1/checkout.js"></script>';
 
-// Create a payment button with Checkout.js
-
+// Create the payment button with Checkout.js
 
 // Add a script to handle the payment
 echo '<script>
@@ -40,8 +39,17 @@ echo '<script>
         "color": "#738276"
       },
        handler: function (response) {
-        // Redirect to Instagram page after successful payment
-        window.location.href = "https://chat.whatsapp.com/L2n6xGgC4KO6zt8MyckBqs";
+        // Send payment details to the backend PHP script via AJAX
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "save_payment.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            // Redirect to Instagram page after successful payment
+            window.location.href = "https://chat.whatsapp.com/L2n6xGgC4KO6zt8MyckBqs";
+          }
+        };
+        xhr.send("payment_id=" + response.razorpay_payment_id + "&order_id=' . $order_id . '");
       },
       callback_url: "' . $callback_url . '"
     };
@@ -49,6 +57,6 @@ echo '<script>
     var rzp = new Razorpay(options);
     rzp.open();
   }
-    startPayment();
+  startPayment();
 </script>';
 ?>
