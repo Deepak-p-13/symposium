@@ -356,7 +356,7 @@ blockquote ul {
   margin-bottom: 10px; 
 
   font-size: 30px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .arrow-list {
