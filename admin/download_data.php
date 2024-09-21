@@ -1,45 +1,77 @@
 <?php
-// Create a database connection
+session_start();
+
+// Check if the user is authenticated (optional, based on your needs)
+
+
+// Database connection details
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = ""; // Your database password
 $dbname = "eventregistration";
 
-
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Create a database connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check the connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Query to retrieve all data except payment proof from the EventRegistration table using mysqli_query
-$sql = "SELECT ID, Email, Name, Gender, CollegeOrUniversityName, DepartmentName, PaymentReference, TechnicalEvent, NonTechnicalEvent, PhoneNumber, Accommodation, AccommodationDate, CollegeBus, BoardingPoint FROM eventregistration";
-$result = mysqli_query($conn, $sql);
+// Set the headers to download the file
+header('Content-Type: text/csv');
+header('Content-Disposition: attachment; filename="event_registration_data.csv"');
 
-if ($result) {
-    // Generate CSV data
-    $csvFileName = "event_registration_data.csv";
-    header('Content-Type: text/csv');
-    header('Content-Disposition: attachment; filename="' . $csvFileName . '"');
+// Open output stream
+$output = fopen('php://output', 'w');
 
-    $output = fopen('php://output', 'w');
+// Write the header row to the CSV
+fputcsv($output, ['ID', 'Email', 'Name', 'Gender', 'College/University', 'Department', 'Event1', 'Event2', 'Event3', 'Event4', 'Phone', 'Accommodation', 'Accommodation Date', 'College Bus', 'Boarding Point', 'payment_id']);
 
-    // Write the CSV header row
-    fputcsv($output, array('ID', 'Email', 'Name', 'Gender', 'College/University', 'Department', 'Payment Reference', 'Technical Event', 'Non-Technical Event', 'Phone', 'Accommodation', 'Accommodation Date', 'College Bus', 'Boarding Point'));
+// Query to retrieve all data from the EventRegistration table
+$sql = "SELECT * FROM eventregistration";
+$result = $conn->query($sql);
 
-    // Write the data rows
-    while ($row = mysqli_fetch_assoc($result)) {
-        fputcsv($output, $row);
+// Fetch each row and write it to the CSV
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        // Prepare the events for CSV output
+        $technicalEvents = explode(', ', $row['TechnicalEvent']);
+        $technicalEvents = array_pad($technicalEvents, 4, 'N/A'); // Pad to ensure 4 columns
+
+        $nonTechnicalEvents = explode(', ', $row['NonTechnicalEvent']);
+        $nonTechnicalEvents = array_pad($nonTechnicalEvents, 4, 'N/A'); // Pad to ensure 4 columns
+
+        // Combine the row data with the events
+        $data = [
+            $row['ID'],
+            $row['Email'],
+            $row['Name'],
+            $row['Gender'],
+            $row['CollegeOrUniversityName'],
+            $row['DepartmentName'],
+            $technicalEvents[0], // Event 1
+            $technicalEvents[1], // Event 2
+            $technicalEvents[2], // Event 3
+            $technicalEvents[3], // Event 4
+            $row['PhoneNumber'],
+            $row['Accommodation'],
+            $row['AccommodationDate'],
+            $row['CollegeBus'],
+            $row['BoardingPoint'],
+            $row['payment_id']
+        ];
+
+        // Write the row to the CSV
+        fputcsv($output, $data);
     }
-
-    fclose($output);
-    mysqli_free_result($result);
-} else {
-    echo "Query error: " . mysqli_error($conn);
 }
 
-// Close the database connection
-mysqli_close($conn);
+// Close the output stream
+fclose($output);
+
+// Free result and close the connection
+$result->free();
+$conn->close();
+exit();
 ?>
