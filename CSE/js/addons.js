@@ -48,7 +48,7 @@ const descriptions = {
     coordinator: {
       name: 'Abhivandan R',
       phone: '+91 90433 84096',
-      venue: 'CODETHON (PRELIMS)	AI/DS LAB AND APPLICATION DEVELOPMENT LAB(GROUND FLOOR), IP LAB(FIRST FLOOR)'
+      venue: 'AI/DS LAB AND APPLICATION DEVELOPMENT LAB(GROUND FLOOR), IP LAB(FIRST FLOOR)'
     }
   },
   'Quiz': {
@@ -58,7 +58,7 @@ const descriptions = {
     coordinator: {
       name: ' Viknesh Rao ',
       phone: '+91  7708283676',
-      venue: ' QUIZ (PRELIMS)	LIBRARY SEMINAR HALL'
+      venue: 'LIBRARY SEMINAR HALL'
     }
   },
   'CipherChase': {
@@ -68,7 +68,7 @@ const descriptions = {
     coordinator: {
       name: 'Sugitha',
       phone: '+91 9361084477',
-      venue: 'Tressure hunt LIBRARY SEMINAR HALL'
+      venue: 'LIBRARY SEMINAR HALL'
     }
   },
   'MemeTime': {
@@ -78,7 +78,7 @@ const descriptions = {
     coordinator: {
       name: 'Sanjay V',
       phone: '+91 9842303822',
-      venue: 'MEME TIME	EMBEDDED LAB (SECOND FLOOR)'
+      venue: 'EMBEDDED LAB (SECOND FLOOR)'
     }
   },
   'Gaming': {
@@ -88,7 +88,7 @@ const descriptions = {
     coordinator: {
       name: 'Guru Charran V',
       phone: '+91 9150150713',
-      venue: 'Gaming AR/VR Lab'
+      venue: 'AR/VR Lab'
     }
   },
   'Shortography': {
@@ -98,7 +98,7 @@ const descriptions = {
     coordinator: {
       name: 'Anandhu B',
       phone: '+91 8072600146',
-      venue: 'SHORTOGRAPHY(PHOTOGRAPHY)	PROGRAMMING LAB (SECOND FLOOR)'
+      venue: 'PROGRAMMING LAB (SECOND FLOOR)'
     }
   },
   'BestManager': {
@@ -108,7 +108,7 @@ const descriptions = {
     coordinator: {
       name: 'Monica',
       phone: '+91 9789823632',
-      venue: 'BEST MANAGER	CSE SEMINAR HALL'
+      venue: 'CSE SEMINAR HALL'
     }
   }
 };
@@ -169,9 +169,10 @@ const rules = {
     'The decision of the judges will be final.'
   ],
   'BestManager': [
-    'Rule 1: Solo participation only.',
-    'Rule 2: Each round will focus on different managerial skills.',
-    'Rule 3: Participants must follow time limits strictly.'
+    ' ⁠Team Composition: Solo (Individual participation only).',
+    'Each round will result in the elimination of participants.',
+    '⁠There are a total of 4 distinct rounds.',
+    'The judge\'s verdict is conclusive'
   ]
 };
 
