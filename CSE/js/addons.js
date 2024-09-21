@@ -31,55 +31,88 @@ const popupTitle = document.getElementById('popupTitle');
 const popupContent = document.getElementById('popupContent');
 
 const descriptions = {
-  'InsightX': [
-    'Do you have an innovative idea or research that could shape the future of technology? Join us at Elements 2k24 for InsightX, the ultimate Paper Presentation event where your groundbreaking ideas take center stage.',
-    'This is your opportunity to present cutting-edge research, challenge conventional thinking, and engage with a panel of experts and fellow innovators.',
-    'At InsightX, we are looking for forward-thinking concepts that tackle the latest technological advancements. Share your insights, explore new possibilities, and gain invaluable feedback from professionals in the field. Whether it\'s a futuristic solution or an emerging trend, your presentation could inspire tomorrow\'s technology.',
-    'Following all presentations, the judging panel will deliberate and select the top-performing presenter as the winner of the Paper Presentation Event. The winner will be announced at the conclusion of the event.',
-'Bring your passion for innovation, and let your ideas inspire the future!'
-  ],
-  'Code-A-Thon': [
-'Gear up for the ultimate test of your coding skills at Elements 2k24\'s Code-A-Thon! Whether you\'re a coding prodigy or an algorithm enthusiast, this event will push your limits as you battle against time and your peers to solve challenging problems.',
-    ' Code-A-Thon is more than just a contest – it\'s a race against the clock, where logic, speed, and strategy are your greatest allies.',
-    'Ready to code your way to the top? Bring your A-game, crack complex challenges, and stand a chance to become the ultimate Code-A-Thon champion!'
-  ],
-  'Quiz': [
-    'Join us at Elements 2k24 for the exhilarating Quiz Quest, where knowledge meets excitement! This is not just any quiz; it’s a thrilling competition that challenges your intellect and creativity across both technical and general domains. Whether you\'re a tech whiz or a trivia buff, this event promises to engage, entertain, and educate.',
-    'In Quiz Quest, teams will face a series of stimulating questions that span the latest in technology, scientific breakthroughs, and general knowledge. Put your skills to the test, strategize with your teammates, and compete against the brightest minds for the ultimate title of Quiz Champions!',
-    'Get ready to challenge yourself, have fun, and connect with fellow knowledge seekers! Quiz Quest isn’t just about answering questions; it’s about teamwork, strategy, and a shared love for learning.',
-    'Join us for a chance to showcase your intellect and enjoy a fun-filled experience at Elements 2k24! Who will emerge as the ultimate quiz masters? Come and find out!'
-  ],
-  'CipherChase': [
-    'Get ready for an exhilarating adventure at Elements 2k24 with Cipher Chase! This isn’t just any ordinary treasure hunt; it’s a thrilling race that combines technical challenges with problem-solving skills, teamwork, and a bit of mystery.',
-    'Participants will embark on a quest through the campus, decoding clues and solving puzzles that will test your knowledge of technology, logic, and creativity. As you navigate through each clue, you’ll uncover secrets and unlock new challenges, all while racing against the clock and other teams',
-    'Whether you’re deciphering codes, cracking riddles, or tackling tech-related tasks, Cipher Chase promises to be an engaging experience that fosters collaboration and excitement. Gather your team, sharpen your minds, and prepare for a hunt that will keep you on your toes and leave you yearning for more!',
-    'Will you be the first to uncover the treasure? Join us for Cipher Chase and find out!'
-  ],
-  'MemeTime': [
-    'Welcome to *Meme Time* at *Elements 2k24*, where laughter and creativity collide! This fun-filled event invites participants to channel their inner comedian and create the most hilarious and relatable memes. ',
-    'In today’s digital age, memes are the language of the internet, and now it\'s your turn to contribute to the meme culture! Whether you’re a seasoned meme-maker or a first-timer, this event encourages everyone to let their imaginations run wild. ',
-    'You’ll have the chance to craft memes that reflect your unique perspective on technology, life, or current trends, all while entertaining your fellow participants.',
-    'oin us for a day of creativity, humor, and camaraderie as you compete to create the funniest, most original memes. Share your creations, vote for your favorites, and enjoy a lighthearted atmosphere filled with laughter. ',
-    'Get ready for *Meme Time*, where the only limit is your creativity, and the goal is to make everyone smile!'
-  ],
-  'Gaming': [
-    'Welcome to *Game On* at *Elements 2k24*, where strategy meets excitement in an epic gaming showdown! Get ready to compete in a series of thrilling games that will test your reflexes, teamwork, and tactical skills.',
-    'Join fellow gamers for an electrifying experience filled with friendly competition and endless fun. Whether you’re a casual player or a seasoned pro, this is your chance to show off your gaming prowess and claim victory!',
-    'Gather your team, strategize your moves, and prepare for an unforgettable gaming adventure at *Game On*!'
-  ],
-  'Shortography': [
-    'Welcome to *Shortography* at *Elements 2k24*, where your creativity behind the lens meets the art of editing! This exciting event invites aspiring photographers and videographers to showcase their skills in capturing stunning visuals and crafting compelling narratives through editing.',
-    'In *Shortography*, participants will embark on a creative journey, capturing images and footage that tell a story or evoke emotion. Whether you’re focusing on breathtaking landscapes, candid moments, or innovative concepts, this is your chance to let your artistic vision shine.',
-    ' Once you\'ve captured your content, the next challenge is to transform your raw footage into a polished masterpiece through the magic of editing.',
-    'Join us for a fun-filled day of creativity, collaboration, and inspiration. Engage with fellow enthusiasts, receive valuable feedback, and stand a chance to showcase your work to a panel of judges. ',
-    'Get ready to express yourself, capture stunning moments, and take your photography and video editing skills to new heights at *Shortography*!'
-  ],
-  'BestManager': [
-    'Step into the spotlight at *Elements 2k24* with the *Best Manager* event, where your cognitive and management skills will be put to the ultimate test! This dynamic competition is designed to challenge participants in a series of engaging tasks that assess your ability to think critically, strategize effectively, and lead a team.',
-    'In *Best Manager*, you\'ll navigate real-world scenarios that require quick decision-making, innovative problem-solving, and effective communication. Whether it’s managing resources, resolving conflicts, or making strategic choices, you’ll need to demonstrate your leadership prowess and adaptability in a fast-paced environment.',
-    'Join us for an opportunity to showcase your management skills, network with fellow aspiring leaders, and gain invaluable insights into the world of management. Are you ready to rise to the challenge and claim the title of *Best Manager*? Join us and let your leadership shine!'
-  ]
+  'InsightX': {
+    desc: [
+      'Dive into the future with InsightX! Present your cutting-edge research or innovative ideas in technology and make an impact. With just 6 minutes to shine, this is your chance to share, inspire, and engage with industry experts.'
+    ],
+    coordinator: {
+      name: ' Mohan Krishna',
+      phone: '+91 9080696129',
+      venue: 'PANEL 1: IP LAB (FIRST FLOOR)PANEL 2: THIN CLIENT LAB (FIRST FLOOR)PANEL 3: COMPUTER VISION LAB (FIRST FLOOR)'
+    }
+  },
+  'Code-A-Thon': {
+    desc: [
+     'Join Elements 2k24\'s Code-A-Thon for the ultimate coding challenge! Test your coding skills, solve complex problems, and race against the clock to outsmart your peers. Whether you\'re a coding enthusiast or a problem-solving pro, this event will push your limits and reward the best. Prove your logic, speed, and strategy to become the Code-A-Thon champion!'
+    ],
+    coordinator: {
+      name: 'Abhivandan R',
+      phone: '+91 90433 84096',
+      venue: 'CODETHON (PRELIMS)	AI/DS LAB AND APPLICATION DEVELOPMENT LAB(GROUND FLOOR), IP LAB(FIRST FLOOR)'
+    }
+  },
+  'Quiz': {
+    desc: [
+      'Join us at Elements 2k24 for Quiz Quest, a thrilling competition that challenges both technical and general knowledge. Teams will face exciting questions across technology, science, and trivia, competing for the title of Quiz Champions. Whether you\'re a tech enthusiast or trivia lover, this event promises to engage, entertain, and educate!'
+    ],
+    coordinator: {
+      name: ' Viknesh Rao ',
+      phone: '+91  7708283676',
+      venue: ' QUIZ (PRELIMS)	LIBRARY SEMINAR HALL'
+    }
+  },
+  'CipherChase': {
+    desc: [
+      'Embark on an exhilarating adventure with Cipher Chase! Decode clues, solve puzzles, and race against time in this thrilling treasure hunt. Unleash your problem-solving skills and find the hidden treasure!'
+    ],
+    coordinator: {
+      name: 'Sugitha',
+      phone: '+91 9361084477',
+      venue: 'Tressure hunt LIBRARY SEMINAR HALL'
+    }
+  },
+  'MemeTime': {
+    desc: [
+     'Get ready for laughs and creativity at Meme Time! Design hilarious and relatable memes that capture the essence of current trends and tech. Showcase your humor and make everyone smile!'
+    ],
+    coordinator: {
+      name: 'Sanjay V',
+      phone: '+91 9842303822',
+      venue: 'MEME TIME	EMBEDDED LAB (SECOND FLOOR)'
+    }
+  },
+  'Gaming': {
+    desc: [
+     'Level up your gaming skills at Game On! Compete in exciting games, test your reflexes, and enjoy friendly rivalry. It’s time to gather your team and conquer the gaming arena!'
+    ],
+    coordinator: {
+      name: 'Guru Charran V',
+      phone: '+91 9150150713',
+      venue: 'Gaming AR/VR Lab'
+    }
+  },
+  'Shortography': {
+    desc: [
+     'Capture and create at Shortography! Show off your photography and video editing skills by turning raw footage into stunning visual stories. Express your creativity and craft your perfect shot!'
+    ],
+    coordinator: {
+      name: 'Anandhu B',
+      phone: '+91 8072600146',
+      venue: 'SHORTOGRAPHY(PHOTOGRAPHY)	PROGRAMMING LAB (SECOND FLOOR)'
+    }
+  },
+  'BestManager': {
+    desc: [
+   ' Prove your leadership prowess in Best Manager! Tackle real-world scenarios, make strategic decisions, and demonstrate your cognitive and management skills. Are you ready to lead and succeed?'
+    ],
+    coordinator: {
+      name: 'Monica',
+      phone: '+91 9789823632',
+      venue: 'BEST MANAGER	CSE SEMINAR HALL'
+    }
+  }
 };
+
 
 const rules = {
   'InsightX': [
@@ -88,24 +121,33 @@ const rules = {
     'Rule 3: Use of visual aids is encouraged.'
   ],
   'Code-A-Thon': [
-    'Rule 1: Solo participation only.',
-    'Rule 2: The event will last for 2 hours.',
-    'Rule 3: Any form of plagiarism will lead to disqualification.'
+    'Teams : 2-4 members each',
+    'Time Limits : Strict limits for each round.',
+    'Scoring : Based on accuracy, speed, creativity, and collaboration, with potential elimination in each round.',
+    'The decision of the judges will be final.'
   ],
   'Quiz': [
-    'Rule 1: Teams of up to 3 members.',
-    'Rule 2: The quiz will consist of 3 rounds.',
-    'Rule 3: No electronic devices are allowed.'
+   'Each team can consist of 2 members.',
+   ' ⁠Use of mobile phones or search engines is strictly prohibited.',
+   ' ⁠Using mobile phones during the competition may result in elimination.',
+   '⁠The quiz will consist of 5 rounds in total.',
+   ' ⁠The judges decisions are final and binding in all matters related to the quiz.',
+   '⁠All necessary materials (pen, paper, buzzer, etc.) will be provided. External study materials are not allowed.',
+   'The decision of the judges will be final.'
   ],
   'CipherChase': [
-    'Rule 1: Teams of up to 3 members.',
-    'Rule 2: You will be searching for clues to solve the puzzles.',
-    'Rule 3: The team that finds the treasure first wins.'
+    'Teams : 2-4 members each',
+    'Time Limits : Strict limits for each round.',
+    'Scoring : Based on accuracy, speed, creativity, and collaboration, with potential elimination in each round.'
   ],
   'MemeTime': [
-    'Rule 1: Memes must be created within 30 minutes.',
-    'Rule 2: No offensive or inappropriate content is allowed.',
-    'Rule 3: Judges’ decisions will be final.'
+    'The competition consists of two rounds: the selection round and the finals.',
+    '⁠Both rounds will feature on-the-spot topics.',
+    'After receiving the topic, participants will have 20 minutes to create their memes.',
+    '⁠Each participant can submit only one meme.',
+    'Memes should align with current trends.',
+    'Rules for the final round will be provided on the spot.',
+    'The decision of the judges will be final.'
   ],
   'Gaming': [
     'Rule 1: Teams of up to 5 players.',
@@ -113,9 +155,18 @@ const rules = {
     'Rule 3: Matches will follow standard game rules.'
   ],
   'Shortography': [
-    'Rule 1: Short films must not exceed 5 minutes in length.',
-    'Rule 2: All content must be original.',
-    'Rule 3: Judges will evaluate based on storytelling and creativity.'
+    'Photography:',
+    'Participants will be given a theme and must capture a photo around the campus based on that theme.',
+    'The time duration is 2 hours after the theme is announced.',
+    ' ⁠Any device can be used for photography.',
+    'Only Lightroom can be used for photo editing.',
+    'The decision of the judges will be final.',
+    ' ',
+    'Video Editing:',
+    'Stock footage will be provided for participants to create a video.',
+    'You will have 1 hour to complete the video editing.',
+    'Any device and tool can be used for video editing.',
+    'The decision of the judges will be final.'
   ],
   'BestManager': [
     'Rule 1: Solo participation only.',
@@ -129,8 +180,17 @@ descriptionButtons.forEach(button => {
   button.addEventListener('click', function() {
     const event = this.getAttribute('data-event');
     popupTitle.textContent = event + " Description";
-    const descriptionList = descriptions[event].map(desc => `<li>${desc}</li>`).join('');
-    popupContent.innerHTML = `<ul class="arrow-list">${descriptionList}</ul>`;
+    const descriptionList = descriptions[event].desc.map(desc => `<li>${desc}</li>`).join('');
+    const coordinatorName = descriptions[event].coordinator.name; // Get the coordinator name
+    const coordinatorPhone = descriptions[event].coordinator.phone; // Get the coordinator phone number
+    const venue = descriptions[event].coordinator.venue; // Get the venue
+    popupContent.innerHTML = `
+      <ul class="arrow-list">${descriptionList}</ul>
+       <p style="padding-left: 20px;"><strong>Venue:</strong> ${venue}</p>
+      <p style="padding-left: 20px;"><strong>Coordinator:</strong> ${coordinatorName}</p>
+      <p style="padding-left: 20px;"> <strong>Phone:</strong> ${coordinatorPhone}</p>
+     
+    `;
     popup.style.display = 'flex';
   });
 });
@@ -159,5 +219,4 @@ window.addEventListener('click', function(event) {
 document.getElementById('scrollUpBtn').addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-  
   
