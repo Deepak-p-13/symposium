@@ -390,3 +390,24 @@ blockquote ul {
   left: 20px; 
   top: 10px;
 }
+@media (max-width: 768px) {
+  #photo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: -5px;
+  }
+
+  #photo .item {
+      flex: 0 0 calc(33.333% - 10px); /* Each item takes 33.33% of the row minus margin */
+      margin: 5px;
+      box-sizing: border-box;
+  }
+
+  #photo .item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px; /* Optional: Add border-radius for aesthetics */
+  }
+}
+
