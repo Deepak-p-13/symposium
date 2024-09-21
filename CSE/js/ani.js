@@ -19,9 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
     sr.reveal('#photo .item a', { interval: 200, delay: 150 });
     sr.reveal('#blog-section .row div', { interval: 200, delay: 150 });
     sr.reveal('.footer .container div', { interval: 200, delay: 150 });
-   //sr.reveal('.floating-icons ', { delay: 150 });
   // sr.reveal('.floating-video ', { delay: 150 });
-
+  video-responsive
 
     
 });
