@@ -31,7 +31,7 @@ const popupTitle = document.getElementById('popupTitle');
 const popupContent = document.getElementById('popupContent');
 
 const descriptions = {
-  'Presentation': [
+  'InsightX': [
     'Do you have an innovative idea or research that could shape the future of technology? Join us at Elements 2k24 for InsightX, the ultimate Paper Presentation event where your groundbreaking ideas take center stage.',
     'This is your opportunity to present cutting-edge research, challenge conventional thinking, and engage with a panel of experts and fellow innovators.',
     'At InsightX, we are looking for forward-thinking concepts that tackle the latest technological advancements. Share your insights, explore new possibilities, and gain invaluable feedback from professionals in the field. Whether it\'s a futuristic solution or an emerging trend, your presentation could inspire tomorrow\'s technology.',
@@ -49,7 +49,7 @@ const descriptions = {
     'Get ready to challenge yourself, have fun, and connect with fellow knowledge seekers! Quiz Quest isn’t just about answering questions; it’s about teamwork, strategy, and a shared love for learning.',
     'Join us for a chance to showcase your intellect and enjoy a fun-filled experience at Elements 2k24! Who will emerge as the ultimate quiz masters? Come and find out!'
   ],
-  'TreasureHunt': [
+  'CipherChase': [
     'Get ready for an exhilarating adventure at Elements 2k24 with Cipher Chase! This isn’t just any ordinary treasure hunt; it’s a thrilling race that combines technical challenges with problem-solving skills, teamwork, and a bit of mystery.',
     'Participants will embark on a quest through the campus, decoding clues and solving puzzles that will test your knowledge of technology, logic, and creativity. As you navigate through each clue, you’ll uncover secrets and unlock new challenges, all while racing against the clock and other teams',
     'Whether you’re deciphering codes, cracking riddles, or tackling tech-related tasks, Cipher Chase promises to be an engaging experience that fosters collaboration and excitement. Gather your team, sharpen your minds, and prepare for a hunt that will keep you on your toes and leave you yearning for more!',
@@ -82,7 +82,7 @@ const descriptions = {
 };
 
 const rules = {
-  'Presentation': [
+  'InsightX': [
     'Rule 1: Each team can have a maximum of 2 participants.',
     'Rule 2: Time limit for the presentation is 15 minutes.',
     'Rule 3: Use of visual aids is encouraged.'
@@ -97,7 +97,7 @@ const rules = {
     'Rule 2: The quiz will consist of 3 rounds.',
     'Rule 3: No electronic devices are allowed.'
   ],
-  'TreasureHunt': [
+  'CipherChase': [
     'Rule 1: Teams of up to 3 members.',
     'Rule 2: You will be searching for clues to solve the puzzles.',
     'Rule 3: The team that finds the treasure first wins.'

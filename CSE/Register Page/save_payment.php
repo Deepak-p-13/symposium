@@ -25,6 +25,9 @@ if (isset($_POST['payment_id']) && isset($_POST['order_id']) && isset($_POST['em
     $sql = "UPDATE eventregistration SET payment_id = '$payment_id' WHERE email = '$email'";
     if ($conn->query($sql) === TRUE) {
         echo "Payment record inserted successfully";
+         // Load another PHP file after successful insertion and pass the email
+         header("Location: send.php?email=" . urlencode($email)); // Change 'another_file.php' to your desired file
+         exit(); // Stop further script execution
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

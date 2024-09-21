@@ -172,6 +172,11 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   object-fit: cover; 
   z-index: -1; 
 }
+@media (max-width: 768px) {
+  .floating-video{
+      display: none;
+  }
+}
 
 .overlay {
   position: absolute;
@@ -380,7 +385,7 @@ blockquote ul {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #fff;
+ 
 }
 
 .navbar-logo {

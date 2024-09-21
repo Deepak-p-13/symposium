@@ -1,6 +1,5 @@
 <?php
 // Ensure the correct autoload path
-//send mail .php
 require __DIR__ . '/vendor/autoload.php';  // Make sure the path is correct
 
 // Enable error reporting for troubleshooting
@@ -14,17 +13,19 @@ use PHPMailer\PHPMailer\Exception;
 
 // Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
+
 // Retrieve the email from the query string
-if (isset($_GET['email'])) {
-    $email = urldecode($_GET['email']);
-    echo "Email: " . $email;
+$email = isset($_GET['email']) ? $_GET['email'] : null; // Get the email from the URL
+
+if ($email) {
+    echo "Email passed: " . htmlspecialchars($email); // Display the email safely
 } else {
-    echo "No email provided.";
+    die("No email found."); // Stop execution if no email is provided
 }
 
 try {
     // Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output (change to 0 for production)
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                       // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
@@ -37,8 +38,7 @@ try {
     $mail->setFrom('elements@srec.ac.in', 'Elements');
     $mail->addAddress($email);  // Add a recipient
 
-    // Content3234
-
+    // Content
     $mail->isHTML(true);                                        // Set email format to HTML
     $mail->Subject = 'Here is the subject';
     $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
