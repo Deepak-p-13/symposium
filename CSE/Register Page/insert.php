@@ -68,8 +68,11 @@ if ($check_result) {
 
         $technical_event = implode(', ', array_map('mysqli_real_escape_string', array_fill(0, count($_POST['technical_event']), $conn), $_POST['technical_event']));
 
-        $non_technical_event = implode(', ', array_map('mysqli_real_escape_string', array_fill(0, count($_POST['non_technical_event']), $conn), $_POST['non_technical_event']));
-
+        if (isset($_POST['non_technical_event']) && !empty($_POST['non_technical_event'])) {
+            $non_technical_event = implode(', ', array_map('mysqli_real_escape_string', array_fill(0, count($_POST['non_technical_event']), $conn), $_POST['non_technical_event']));
+        } else {
+            $non_technical_event = NULL; // Set to NULL if no event is selected
+        }
         $phone = mysqli_real_escape_string($conn, $_POST['phone']);
 
         $accommodation = mysqli_real_escape_string($conn, $_POST['accommodation']);

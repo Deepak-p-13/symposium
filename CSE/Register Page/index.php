@@ -18,7 +18,7 @@ $order = $api->order->create([
 // Check if the email session variable is set
 if (isset($_SESSION['email'])) {
   $email = $_SESSION['email']; // Get the email from the session
-  echo "Welcome, your email is: " . htmlspecialchars($email); // Display the email safely
+  // Display the email safely
 } else {
   echo "No email found. Please register.";
 }

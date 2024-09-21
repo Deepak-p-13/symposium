@@ -38,7 +38,7 @@ const descriptions = {
     coordinator: {
       name: ' Mohan Krishna',
       phone: '+91 9080696129',
-      venue: 'PANEL 1: IP LAB (FIRST FLOOR)PANEL 2: THIN CLIENT LAB (FIRST FLOOR)PANEL 3: COMPUTER VISION LAB (FIRST FLOOR)'
+      venue: 'PANEL 1: IP LAB (FIRST FLOOR)PANEL 2: THIN CLIENT LAB (FIRST FLOOR)PANEL 3: COMPUTER VISION LAB (FIRST FLOOR), CSE Block'
     }
   },
   'Code-A-Thon': {
@@ -48,7 +48,7 @@ const descriptions = {
     coordinator: {
       name: 'Abhivandan R',
       phone: '+91 90433 84096',
-      venue: 'AI/DS LAB AND APPLICATION DEVELOPMENT LAB(GROUND FLOOR), IP LAB(FIRST FLOOR)'
+      venue: 'AI/DS LAB AND APPLICATION DEVELOPMENT LAB(GROUND FLOOR), IP LAB(FIRST FLOOR), CSE Block'
     }
   },
   'Quiz': {
@@ -58,7 +58,7 @@ const descriptions = {
     coordinator: {
       name: ' Viknesh Rao ',
       phone: '+91  7708283676',
-      venue: 'LIBRARY SEMINAR HALL'
+      venue: 'LIBRARY SEMINAR HALL, Library Block'
     }
   },
   'CipherChase': {
@@ -68,7 +68,7 @@ const descriptions = {
     coordinator: {
       name: 'Sugitha',
       phone: '+91 9361084477',
-      venue: 'LIBRARY SEMINAR HALL'
+      venue: 'LIBRARY SEMINAR HALL, Library Block'
     }
   },
   'MemeTime': {
@@ -78,7 +78,7 @@ const descriptions = {
     coordinator: {
       name: 'Sanjay V',
       phone: '+91 9842303822',
-      venue: 'EMBEDDED LAB (SECOND FLOOR)'
+      venue: 'EMBEDDED LAB (SECOND FLOOR), CSE Block'
     }
   },
   'Gaming': {
@@ -88,7 +88,7 @@ const descriptions = {
     coordinator: {
       name: 'Guru Charran V',
       phone: '+91 9150150713',
-      venue: 'AR/VR Lab'
+      venue: 'AR/VR Lab, , CSE Block'
     }
   },
   'Shortography': {
@@ -98,7 +98,7 @@ const descriptions = {
     coordinator: {
       name: 'Anandhu B',
       phone: '+91 8072600146',
-      venue: 'PROGRAMMING LAB (SECOND FLOOR)'
+      venue: 'PROGRAMMING LAB (SECOND FLOOR), CSE Block'
     }
   },
   'BestManager': {
@@ -108,7 +108,7 @@ const descriptions = {
     coordinator: {
       name: 'Monica',
       phone: '+91 9789823632',
-      venue: 'CSE SEMINAR HALL'
+      venue: 'CSE SEMINAR HALL, CSE Block'
     }
   }
 };

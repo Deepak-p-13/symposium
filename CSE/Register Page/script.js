@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nonTechnicalCheckboxes = document.querySelectorAll('input[name="non_technical_event[]"]');
     const submitBtn = document.querySelector('.submitBtn');
 
-    const paperPresentationCheckbox = document.getElementById('paper_presentation');
+    const codeathonCheckbox = document.getElementById('codeathon');
     const quizCheckbox = document.getElementById('quiz');
 
     let technicalCount = 0;
@@ -76,20 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handlePaperQuizExclusivity() {
-        if (paperPresentationCheckbox.checked) {
+        if (codeathonCheckbox.checked) {
             quizCheckbox.disabled = true;
         } else if (technicalCount < 2) { 
             quizCheckbox.disabled = false;
         }
 
         if (quizCheckbox.checked) {
-            paperPresentationCheckbox.disabled = true;
+            codeathonCheckbox.disabled = true;
         } else if (technicalCount < 2) { 
-            paperPresentationCheckbox.disabled = false;
+            codeathonCheckbox.disabled = false;
         }
     }
 
-    paperPresentationCheckbox.addEventListener('change', () => {
+    codeathonCheckbox.addEventListener('change', () => {
         handlePaperQuizExclusivity();
         updateCheckboxState();
     });
