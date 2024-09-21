@@ -82,7 +82,7 @@ try {
     <p>Thank you for registering for Elements 2k24! We are excited to have you join us for this exciting symposium.</p>
     <p><strong>Your Registration Details:</strong></p>
     <ul>
-        <li><strong>Unique ID:</strong> $user_id</li>
+        <li><strong>User ID:</strong> $user_id</li>
         <li><strong>Name:</strong> $user_name</li>
         <li><strong>Technical Events:</strong> $technical_events_str</li>
         <li><strong>Non-Technical Events:</strong> $non_technical_events_str</li>
