@@ -22,15 +22,12 @@ h1.text-white {
   color: white;
   font-size: 24px; 
 }
-/* Mobile view adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   h1.text-white {
-      font-size: 10px; 
-      overflow: hidden; 
-      text-overflow: ellipsis; 
-      display: block; 
+      font-size: 13px !important; 
   }
 }
+
 
 h1.text-ele {
   white-space: nowrap; 
