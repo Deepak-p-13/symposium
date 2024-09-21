@@ -45,6 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const technicalCheckboxes = document.querySelectorAll('input[name="technical_event[]"]');
     const nonTechnicalCheckboxes = document.querySelectorAll('input[name="non_technical_event[]"]');
     const submitBtn = document.querySelector('.submitBtn');
+
+    const paperPresentationCheckbox = document.getElementById('paper_presentation');
+    const quizCheckbox = document.getElementById('quiz');
+
     let technicalCount = 0;
     let nonTechnicalCount = 0;
 
@@ -62,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 checkbox.disabled = false;
             }
         });
-        
         nonTechnicalCheckboxes.forEach(checkbox => {
             if (nonTechnicalCount >= 2 && !checkbox.checked) {
                 checkbox.disabled = true;
@@ -72,20 +75,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function handlePaperQuizExclusivity() {
+        if (paperPresentationCheckbox.checked) {
+            quizCheckbox.disabled = true;
+        } else if (technicalCount < 2) { 
+            quizCheckbox.disabled = false;
+        }
+
+        if (quizCheckbox.checked) {
+            paperPresentationCheckbox.disabled = true;
+        } else if (technicalCount < 2) { 
+            paperPresentationCheckbox.disabled = false;
+        }
+    }
+
+    paperPresentationCheckbox.addEventListener('change', () => {
+        handlePaperQuizExclusivity();
+        updateCheckboxState();
+    });
+
+    quizCheckbox.addEventListener('change', () => {
+        handlePaperQuizExclusivity();
+        updateCheckboxState();
+    });
+
     [...technicalCheckboxes, ...nonTechnicalCheckboxes].forEach(checkbox => {
         checkbox.addEventListener('change', () => {
             if (!validateSelections()) {
                 alert('You can select at most 2 technical and 2 non-technical events.');
             }
             updateCheckboxState();
+            handlePaperQuizExclusivity();
         });
     });
 
     submitBtn.addEventListener('click', (event) => {
         if (!validateSelections()) {
             event.preventDefault();
-            alert('Please select atleast 1 event and ensure no more than 2 are selected from each category.');
+            alert('Please select at least 1 event and ensure no more than 2 are selected from each category.');
         }
     });
-   
+
+    handlePaperQuizExclusivity();
 });
