@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $servername = "localhost";
 
 $username = "root";
@@ -101,6 +101,8 @@ if ($check_result) {
         if (mysqli_stmt_execute($stmt)) {
 
             // Registration successful, redirect to the WhatsApp link
+
+            $_SESSION['email'] = $email;
 
             header("Location: index.php");
 
