@@ -69,7 +69,7 @@ $dbname = "eventregistration";
         if ($result) {
             if (mysqli_num_rows($result) > 0) {
                 echo "<table border='1'>";
-                echo "<tr><th>ID</th><th>Email</th><th>Name</th><th>Gender</th><th>College/University</th><th>Department</th></th><th>Technical Event</th><th>Non-Technical Event</th><th>Phone</th><th>Accommodation</th><th>Accommodation Date</th><th>College Bus</th><th>Boarding Point</th></tr>";
+                echo "<tr><th>ID</th><th>Email</th><th>Name</th><th>Gender</th><th>College/University</th><th>Department</th></th><th>Event1</th><th>Event2</th><th>Event3</th><th>Event4</th><th>Phone</th><th>Accommodation</th><th>Accommodation Date</th><th>College Bus</th><th>Boarding Point</th></tr>";
 
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
@@ -82,8 +82,30 @@ $dbname = "eventregistration";
                     // Displaying Payment Proof as a link to view the image (assuming it's stored as BLOB)
                    // echo "<td><a href='view_image.php?id=" . $row['ID'] . "'>View Image</a></td>";
                    // echo "<td>" . $row['PaymentReference'] . "</td>";
-                    echo "<td>" . $row['TechnicalEvent'] . "</td>";
-                    echo "<td>" . $row['NonTechnicalEvent'] . "</td>";
+                   $events = explode(', ', $row['TechnicalEvent']); // Adjust delimiter if needed
+
+                   // Ensure the array has exactly 4 elements, even if there are fewer events
+                   $events = array_pad($events, 4, 'N/A'); // 'N/A' will be displayed if there are fewer events
+               
+                   // Output each event in its own column
+                  
+                     
+                   echo "<td>" . $events[0] . "</td>"; // Event 1
+                   echo "<td>" . $events[1] . "</td>"; // Event 2
+                   
+                   
+                   
+                    $events = explode(', ', $row['NonTechnicalEvent']); // Adjust delimiter if needed
+
+                   // Ensure the array has exactly 4 elements, even if there are fewer events
+                   $events = array_pad($events, 4, 'N/A'); // 'N/A' will be displayed if there are fewer events
+               
+                   // Output each event in its own column
+                  
+                     
+                   echo "<td>" . $events[0] . "</td>"; // Event 1
+                   echo "<td>" . $events[1] . "</td>"; // Event 2
+                   
                     echo "<td>" . $row['PhoneNumber'] . "</td>";
                     echo "<td>" . $row['Accommodation'] . "</td>";
                     echo "<td>" . $row['AccommodationDate'] . "</td>";
