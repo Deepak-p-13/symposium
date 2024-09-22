@@ -199,7 +199,7 @@ descriptionButtons.forEach(button => {
      // Add specific link for InsightX
      let additionalLink = '';
      if (event === 'InsightX') {
-       additionalLink = `<p style="padding-left: 20px;" ><a href="https://drive.google.com/drive/folders/1d7262NASK402nZeFqAZqkGL53LGnYlpk?usp=sharing" target="_blank">Download PPT format</a></p>`;
+       additionalLink = `<p style="padding-left: 20px;" ><a href="https://drive.google.com/drive/folders/1d7262NASK402nZeFqAZqkGL53LGnYlpk?usp=sharing" target="_blank">Download PPT & Paper format</a></p>`;
      }
     popupContent.innerHTML = `
       <ul class="arrow-list">${descriptionList}</ul>${additionalLink}
@@ -222,7 +222,7 @@ rulesButtons.forEach(button => {
     // Add specific link for InsightX
     let additionalLink = '';
     if (event === 'InsightX') {
-      additionalLink = `<p><a href="https://drive.google.com/drive/folders/1d7262NASK402nZeFqAZqkGL53LGnYlpk?usp=sharing" target="_blank">Download PPT format</a></p>`;
+      additionalLink = `<p><a href="https://drive.google.com/drive/folders/1d7262NASK402nZeFqAZqkGL53LGnYlpk?usp=sharing" target="_blank">Download PPT & Papre format</a></p>`;
     }
 
     popupContent.innerHTML = `<ul class="arrow-list">${rulesList}</ul>${additionalLink}`;
