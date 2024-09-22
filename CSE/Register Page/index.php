@@ -39,7 +39,7 @@ function startPayment() {
     key: "' . $api_key . '",
     amount: "' . $order->amount . '",
     currency: "' . $order->currency . '",
-    name: "Your Company Name",
+    name: "Elements 2K24",
     description: "Payment for your order",
     image: "https://cdn.razorpay.com/logos/GhRQcycean79PqE_medium.png",
     order_id: "' . $order_id . '",
