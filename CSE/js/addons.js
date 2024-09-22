@@ -116,9 +116,19 @@ const descriptions = {
 
 const rules = {
   'InsightX': [
-    'Rule 1: Each team can have a maximum of 2 participants.',
-    'Rule 2: Time limit for the presentation is 15 minutes.',
-    'Rule 3: Use of visual aids is encouraged.'
+    'General Guidelines',
+    'Team Size: 3 to 4 members per team',
+    'Registration: Online before submission deadline',
+    'Topic: Recent technology relevant to engineering/tech.',
+    'Abstract Submission',
+    'Deadline: October 2, 2024, mail to: elements@srec.ac.in',
+    'Guidelines:',
+    'Include authors\' names, email IDs and affiliations.',
+    'Mention college, domain, and topic',
+    '(Abstract) 250 words max, summarising purpose, methodology, findings (Strictly follow IEEE format).',
+    'Presentation Format:',
+    'Duration: 6 minutes (5 mins presentation, 1 min Q&A).',
+    'Download Sample template in below link.'
   ],
   'Code-A-Thon': [
     'Teams : 2-4 members each',
