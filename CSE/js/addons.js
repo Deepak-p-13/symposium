@@ -136,9 +136,10 @@ const rules = {
    'The decision of the judges will be final.'
   ],
   'CipherChase': [
-    'Teams : 2-4 members each',
-    'Time Limits : Strict limits for each round.',
-    'Scoring : Based on accuracy, speed, creativity, and collaboration, with potential elimination in each round.'
+    'Team: 3-4 members per team.',
+    'Time limits: Strict time constraints for each clue.',
+    'Further rules and instructions will be announced at the time of event.',
+    'Convenors and volunteers decision will be final.',
   ],
   'MemeTime': [
     'The competition consists of two rounds: the selection round and the finals.',
@@ -150,9 +151,19 @@ const rules = {
     'The decision of the judges will be final.'
   ],
   'Gaming': [
-    'Rule 1: Teams of up to 5 players.',
-    'Rule 2: No cheating or hacking is tolerated.',
-    'Rule 3: Matches will follow standard game rules.'
+    'Two PC games',
+    'Team size: Both are individual participation games and no teams.',
+    'Blur Rules(Car Race Game)',
+    'No Power Ups',
+    ' ⁠⁠Controller Optional',
+    '⁠⁠No Mods',
+    'Only B-Tier Cars for First Round.',
+    'Collisions Allowed ',
+    'FIFA 23(Football game)',
+    'Only Internatinal and League Teams.',
+    'Extra Time will not be provided for Initial Rounds only Penalty kicks.'
+
+
   ],
   'Shortography': [
     'Photography:',
@@ -196,13 +207,19 @@ descriptionButtons.forEach(button => {
   });
 });
 
-// Event listener for rules buttons
 rulesButtons.forEach(button => {
   button.addEventListener('click', function() {
     const event = this.getAttribute('data-event');
     popupTitle.textContent = event + " Rules";
     const rulesList = rules[event].map(rule => `<li>${rule}</li>`).join('');
-    popupContent.innerHTML = `<ul class="arrow-list">${rulesList}</ul>`;
+
+    // Add specific link for InsightX
+    let additionalLink = '';
+    if (event === 'InsightX') {
+      additionalLink = `<p><a href="https://example.com/insightx" target="_blank">Download PPT format</a></p>`;
+    }
+
+    popupContent.innerHTML = `<ul class="arrow-list">${rulesList}</ul>${additionalLink}`;
     popup.style.display = 'flex';
   });
 });
