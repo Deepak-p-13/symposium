@@ -196,8 +196,14 @@ descriptionButtons.forEach(button => {
     const coordinatorName = descriptions[event].coordinator.name; // Get the coordinator name
     const coordinatorPhone = descriptions[event].coordinator.phone; // Get the coordinator phone number
     const venue = descriptions[event].coordinator.venue; // Get the venue
+     // Add specific link for InsightX
+     let additionalLink = '';
+     if (event === 'InsightX') {
+       additionalLink = `<p style="padding-left: 20px;" ><a href="https://drive.google.com/drive/folders/1d7262NASK402nZeFqAZqkGL53LGnYlpk?usp=sharing" target="_blank">Download PPT format</a></p>`;
+     }
     popupContent.innerHTML = `
-      <ul class="arrow-list">${descriptionList}</ul>
+      <ul class="arrow-list">${descriptionList}</ul>${additionalLink}
+      
        <p style="padding-left: 20px;"><strong>Venue:</strong> ${venue}</p>
       <p style="padding-left: 20px;"><strong>Coordinator:</strong> ${coordinatorName}</p>
       <p style="padding-left: 20px;"> <strong>Phone:</strong> ${coordinatorPhone}</p>
@@ -216,7 +222,7 @@ rulesButtons.forEach(button => {
     // Add specific link for InsightX
     let additionalLink = '';
     if (event === 'InsightX') {
-      additionalLink = `<p><a href="https://example.com/insightx" target="_blank">Download PPT format</a></p>`;
+      additionalLink = `<p><a href="https://drive.google.com/drive/folders/1d7262NASK402nZeFqAZqkGL53LGnYlpk?usp=sharing" target="_blank">Download PPT format</a></p>`;
     }
 
     popupContent.innerHTML = `<ul class="arrow-list">${rulesList}</ul>${additionalLink}`;
