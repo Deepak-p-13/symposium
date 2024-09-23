@@ -19,6 +19,7 @@ $order = $api->order->create([
 if (isset($_SESSION['email'])) {
   $email = $_SESSION['email']; // Get the email from the session
   // Display the email safely
+  echo "Welcome, your email is: " . htmlspecialchars($email);
 } else {
   echo "No email found. Please register.";
 }
@@ -39,7 +40,7 @@ function startPayment() {
     key: "' . $api_key . '",
     amount: "' . $order->amount . '",
     currency: "' . $order->currency . '",
-    name: "Elements 2K24",
+    name: "Your Company Name",
     description: "Payment for your order",
     image: "https://cdn.razorpay.com/logos/GhRQcycean79PqE_medium.png",
     order_id: "' . $order_id . '",
