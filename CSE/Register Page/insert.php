@@ -52,7 +52,10 @@ if ($check_result) {
 
     if ($email_count > 0) {
 
-        echo "Error: Email address already exists in the database.";
+        echo "<script>
+        alert('Error: Email address already exists in the database.');
+        window.location.href = './register.html'; // Redirect to the registration page
+    </script>";
 
     } else {
 
