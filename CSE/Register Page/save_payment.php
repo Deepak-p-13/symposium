@@ -13,25 +13,32 @@ if ($conn->connect_error) {
 }
 
 // Get the payment ID and order ID from the AJAX request
-if (isset($_POST['payment_id']) && isset($_POST['order_id']) && isset($_POST['email'])) {
+if (isset($_POST['payment_id'], $_POST['order_id'], $_POST['email'])) {
     $payment_id = $_POST['payment_id'];
     $order_id = $_POST['order_id'];
     $email = $_POST['email'];
 
-    // Log the email to the console (requires browser support)
-    echo '<script>console.log("Email received: ' . htmlspecialchars($email) . '");</script>';
+    // Store the email in session for use in the next script (send.php)
+    $_SESSION['email'] = $email;
 
-    // Insert the payment ID and order ID into the database
-    $sql = "UPDATE eventregistration SET payment_id = '$payment_id' WHERE email = '$email'";
-    if ($conn->query($sql) === TRUE) {
-        echo "Payment record inserted successfully";
-         // Load another PHP file after successful insertion and pass the email
-         header("Location: send.php?email=" . urlencode($email)); // Change 'another_file.php' to your desired file
-         exit(); // Stop further script execution
+    // Insert the payment ID into the database using a prepared statement to prevent SQL injection
+    $stmt = $conn->prepare("UPDATE eventregistration SET payment_id = ? WHERE email = ?");
+    $stmt->bind_param("ss", $payment_id, $email);
+    
+    if ($stmt->execute()) {
+        echo "Payment record updated successfully";
+        
+        // Redirect to send.php after successful update
+        header("Location: send.php");
+        exit(); // Stop further script execution
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error updating payment record: " . $stmt->error;
     }
+
+    // Close the statement and connection
+    $stmt->close();
 }
 
 $conn->close();
 ?>
+
