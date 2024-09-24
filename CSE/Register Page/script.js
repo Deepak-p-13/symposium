@@ -3,6 +3,16 @@ const prevBtns = document.querySelectorAll('.backBtn');
 const formSections = document.querySelectorAll('.form');
 let currentSection = 0;
 
+function toggleOtherInput(select) {
+    var otherCollegeDiv = document.getElementById("otherCollegeDiv");
+    if (select.value === "Other") {
+      otherCollegeDiv.style.display = "block"; // Show the input field if "Other" is selected
+    } else {
+      otherCollegeDiv.style.display = "none"; // Hide the input field if another option is selected
+    }
+  }
+
+  
 nextBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         formSections[currentSection].style.display = 'none';
@@ -115,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please select at least 1 event and ensure no more than 2 are selected from each category.');
         }
     });
-
+   
     handlePaperQuizExclusivity();
+    
 });

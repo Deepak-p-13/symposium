@@ -41,10 +41,50 @@
                                 <option value="Prefer not to say">Prefer not to say</option>
                             </select>
                         </div>
-                        <div class="input-field">
-                            <label for="college">College/University</label>
-                            <input type="text" id="college" name="college" placeholder="Enter your college/university"
-                                required>
+                        
+                        <label for="college">Select College:</label>
+  
+  <!-- Dropdown list with predefined options -->
+                        <select name="college" id="college" onchange="toggleOtherInput(this)">
+                            <option value="">-- Select College --</option>
+                            <option value="University Departments of Anna University, Chennai - CEG Campus, Sardar Patel Road, Guindy, Chennai 600 025">University Departments of Anna University, Chennai - CEG Campus, Sardar Patel Road, Guindy, Chennai 600 025</option>
+                                <option value="University Departments of Anna University, Chennai - ACT Campus, Sardar Patel Road, Guindy, Chennai 600 025">University Departments of Anna University, Chennai - ACT Campus, Sardar Patel Road, Guindy, Chennai 600 025</option>
+                                <option value="University Departments of Anna University, Chennai - MIT Campus, Chrompet, Tambaram Taluk, Kancheepuram District 600 044">University Departments of Anna University, Chennai - MIT Campus, Chrompet, Tambaram Taluk, Kancheepuram District 600 044</option>
+                                <option value="Annamalai University Faculty of Engineering and Technology, Annamalai Nagar, Cuddalore 608002">Annamalai University Faculty of Engineering and Technology, Annamalai Nagar, Cuddalore 608002</option>
+                                <option value="University College of Engineering, Villupuram, Kakuppam, Villupuram District 605103">University College of Engineering, Villupuram, Kakuppam, Villupuram District 605103</option>
+                                <option value="University College of Engineering, Tindivanam, Melpakkam, Tindivanam, Villupuram District 604001">University College of Engineering, Tindivanam, Melpakkam, Tindivanam, Villupuram District 604001</option>
+                                <option value="University College of Engineering, Arni, Arni to Devikapuram Road, Thatchur, Arni, Thiruvannamalai District 632326">University College of Engineering, Arni, Arni to Devikapuram Road, Thatchur, Arni, Thiruvannamalai District 632326</option>
+                                <option value="University College of Engineering, Kancheepuram, Ponnerikarai Campus, NH4, Chennai- Bangalore Highway, Karaipettai Village & Post, Kancheepuram District 631552">University College of Engineering, Kancheepuram, Ponnerikarai Campus, NH4, Chennai- Bangalore Highway, Karaipettai Village & Post, Kancheepuram District 631552</option>
+                                <option value="Aalim Muhammed Salegh College of Engineering, Muthapudupet, Avadi IAF, Chennai 600055">Aalim Muhammed Salegh College of Engineering, Muthapudupet, Avadi IAF, Chennai 600055</option>
+                                <option value="Jaya Engineering College, Thirunindravur, Chennai 602024">Jaya Engineering College, Thirunindravur, Chennai 602024</option>
+                                <option value="Jaya Institute of Technology, Kanchipadi Post, Thiruvallur-Tiruttani NH Road, Thiruvallur District 631204">Jaya Institute of Technology, Kanchipadi Post, Thiruvallur-Tiruttani NH Road, Thiruvallur District 631204</option>
+                                <option value="Prathyusha Engineering College, Aranvoyalkuppam, Thiruvallur District 602025">Prathyusha Engineering College, Aranvoyalkuppam, Thiruvallur District 602025</option>
+                                <option value="R M D Engineering College, Kavaraipettai, Gummidipoondi, Thiruvallur District 601206">R M D Engineering College, Kavaraipettai, Gummidipoondi, Thiruvallur District 601206</option>
+                                <option value="R M K Engineering College, Kavaraipettai, Gummidipoondi, Thiruvallur District 601206">R M K Engineering College, Kavaraipettai, Gummidipoondi, Thiruvallur District 601206</option>
+                                <option value="S A Engineering College, Thiruverkadu, Chennai 600077">S A Engineering College, Thiruverkadu, Chennai 600077</option>
+                                <option value="Sri Ram Engineering College, Perumalpattu, Veppampattu (R S), Thiruvallur District 602 024">Sri Ram Engineering College, Perumalpattu, Veppampattu (R S), Thiruvallur District 602 024</option>
+                                <option value="Sri Venkateswara College of Engineering and Technology, Thirupachur, Thiruvallur District 631203">Sri Venkateswara College of Engineering and Technology, Thirupachur, Thiruvallur District 631203</option>
+                                <option value="Vel Tech Multi Tech Dr. Rangarajan Dr. Sakunthala Engineering College (Autonomous), Avadi- Alamathi Road, Chennai 600 062">Vel Tech Multi Tech Dr. Rangarajan Dr. Sakunthala Engineering College (Autonomous), Avadi- Alamathi Road, Chennai 600 062</option>
+                                <option value="Velammal Engineering College (Autonomous), Ambattur-Redhills Road, Chennai 600066">Velammal Engineering College (Autonomous), Ambattur-Redhills Road, Chennai 600066</option>
+                                <option value="Sri Venkateswara Institute of Science and Technology, Kozhundalur, Thiruvallur District 631203">Sri Venkateswara Institute of Science and Technology, Kozhundalur, Thiruvallur District 631203</option>
+                                <option value="Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College, Avadi-Alamathi Road, Chennai 600 062">Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College, Avadi-Alamathi Road, Chennai 600 062</option>
+                                <option value="Gojan School of Business and Technology, Alamathi, Chennai 600062">Gojan School of Business and Technology, Alamathi, Chennai 600062</option>
+                                <option value="SAMS College of Engineering and Technology, Panappakkam, Chennai-Tirupathi Road, Uthukkottai Taluk, Thiruvallur District 601102">SAMS College of Engineering and Technology, Panappakkam, Chennai-Tirupathi Road, Uthukkottai Taluk, Thiruvallur District 601102</option>
+                                <option value="P M R Engineering College, Adayalampattu, Maduravoyal, Vanagaram, Chennai 600095">P M R Engineering College, Adayalampattu, Maduravoyal, Vanagaram, Chennai 600095</option>
+                                <option value="J N N Institute of Engineering, Ushaa Garden, Kannigaipair Village, Uthukottai Taluk, Thiruvallur District 601102">J N N Institute of Engineering, Ushaa Garden, Kannigaipair Village, Uthukottai Taluk, Thiruvallur District 601102</option>
+                                <option value="St. Peters College of Engineering and Technology, College Road, Avadi, Chennai 600 054">St. Peters College of Engineering and Technology, College Road, Avadi, Chennai 600 054</option>
+                                <option value="R M K College of Engineering and Technology, Puduvoyal, Gummidipoondi Taluk, Thiruvallur District 601206">R M K College of Engineering and Technology, Puduvoyal, Gummidipoondi Taluk, Thiruvallur District 601206</option>
+                                <option value="Vel Tech, Avadi-Alamathi Road, Chennai 600062">Vel Tech, Avadi-Alamathi Road, Chennai 600062</option>
+                                <option value="Annai Veilankannis College of Engineering, Gandhi Road, Nedungundram, Chennai 600048">Annai Veilankannis College of Engineering, Gandhi Road, Nedungundram, Chennai 600048</option>
+                                <option value="Annai Mira College of Engineering and Technology, Arcot Road, Arappakkam Village, Walaja Taluk, Vellore District 632 517">Annai Mira College of Engineering and Technology, Arcot Road, Arappakkam Village, Walaja Taluk, Vellore District 632 517</option>
+
+                            <option value="Other">Other</option>
+                        </select>
+
+                        <!-- Hidden input field for entering custom college name -->
+                        <div id="otherCollegeDiv" style="display: none;">
+                            <label for="other_college">If not exits Enter your college/university </label>
+                            <input type="text" name="other_college" id="other_college" placeholder="Enter College Name">
                         </div>
                         <div class="input-field">
                             <label for="department">Department</label>

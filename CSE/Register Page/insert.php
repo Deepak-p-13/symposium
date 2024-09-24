@@ -63,8 +63,18 @@ if ($check_result) {
 
         $gender = mysqli_real_escape_string($conn, $_POST['gender']);
 
-        $college = mysqli_real_escape_string($conn, $_POST['college']);
+       // This will contain the dropdown selection
 
+       
+       $college = mysqli_real_escape_string($conn, $_POST['college']); // Get the selected value
+
+       // Check if 'Other' was selected, then update $college with the manually entered college name
+       if ($college === 'Other') {
+           $college = mysqli_real_escape_string($conn, $_POST['other_college']); // Update $college with the manual input
+       }
+       
+       // Now $college will contain either the selected college name or the manually entered one
+       
         $department = mysqli_real_escape_string($conn, $_POST['department']);
 
         $payment_reference = mysqli_real_escape_string($conn, $_POST['payment_reference']);
