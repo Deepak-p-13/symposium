@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     sr.reveal('#blog-section .row div', { interval: 200, delay: 150 });
     sr.reveal('.footer .container div', { interval: 200, delay: 150 });
   // sr.reveal('.floating-video ', { delay: 150 });
-  video-responsive
+
 
     
 });
