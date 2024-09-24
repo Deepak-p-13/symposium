@@ -26,8 +26,7 @@ if (isset($_SESSION['email'])) {
 // Get the order ID
 $order_id = $order->id;
 
-// Set your callback URL
-$callback_url = "http://localhost:8000/success.html";
+
 
 // Include Razorpay Checkout.js library
 echo '<script src="https://checkout.razorpay.com/v1/checkout.js"></script>';
@@ -61,8 +60,7 @@ function startPayment() {
       };
       // Send email along with payment ID and order ID
       xhr.send("payment_id=" + response.razorpay_payment_id + "&order_id=' . $order_id . '&email=' . urlencode($email) . '");
-    },
-    callback_url: "' . $callback_url . '"
+    }
   };
 
   var rzp = new Razorpay(options);
