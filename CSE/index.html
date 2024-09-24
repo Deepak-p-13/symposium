@@ -128,10 +128,8 @@
         </div>
       </div>
 
-      <video class="video-bg" autoplay muted loop playsinline preload="auto" id="background-video">
-        <source id="video-source" src="Video/Background.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <img id="responsive-image" src="images/Logo/WhatsApp Image 2024-09-24 at 23.01.52.jpeg" alt="Image"
+        class="img-face">
 
     </div>
 
@@ -614,12 +612,10 @@
   <script src="js/addons.js"></script>
   <script>
     window.onload = function () {
-      var video = document.getElementById("background-video");
-      var videoSource = document.getElementById("video-source");
+      var img = document.getElementById("responsive-image");
 
       if (window.innerWidth <= 768) {
-        videoSource.setAttribute("src", "Video/mobile.mp4");
-        video.load();
+        img.setAttribute("src", "images/Logo/WhatsApp Image 2024-09-24 at 23.26.09.jpeg");
       }
     };
   </script>
